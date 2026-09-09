@@ -57,7 +57,7 @@ $userPicture = $_SESSION['user_picture'] ?? '';
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="/my-orders-vault/public/">
+        <a class="navbar-brand" href="/public/">
             <i class="fas fa-box"></i> My Orders Vault
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -67,12 +67,12 @@ $userPicture = $_SESSION['user_picture'] ?? '';
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php if ($isLoggedIn): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/my-orders-vault/public/dashboard.php">
+                        <a class="nav-link" href="/public/dashboard.php">
                             <i class="fas fa-chart-line"></i> לוח בקרה
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/my-orders-vault/public/orders.php">
+                        <a class="nav-link" href="/public/orders.php">
                             <i class="fas fa-shopping-cart"></i> ההזמנות שלי
                         </a>
                     </li>
@@ -90,12 +90,12 @@ $userPicture = $_SESSION['user_picture'] ?? '';
                         <button id="syncNavButton" onclick="startGlobalSync()" class="btn-sync-nav">
                             <i class="fas fa-sync-alt"></i> <span>סנכרן</span>
                         </button>
-                        <a href="/my-orders-vault/public/logout.php" class="btn-logout">
+                        <a href="/public/logout.php" class="btn-logout">
                             <i class="fas fa-sign-out-alt"></i> <span>התנתק</span>
                         </a>
                     </div>
                 <?php else: ?>
-                    <a href="/my-orders-vault/public/auth/google.php" class="btn-google">
+                    <a href="/public/auth/google.php" class="btn-google">
                         <i class="fab fa-google"></i> התחבר עם Google
                     </a>
                 <?php endif; ?>
@@ -118,14 +118,14 @@ $userPicture = $_SESSION['user_picture'] ?? '';
             syncBtn.innerHTML = '<div class="spinner" style="width:14px;height:14px;"></div> <span>מסנכרן...</span>';
         }
         
-        fetch('/my-orders-vault/public/sync.php', {
+        fetch('/public/sync.php', {
             method: 'GET',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
             }
         })
         .then(response => {
-            window.location.href = '/my-orders-vault/public/orders.php';
+            window.location.href = '/public/orders.php';
         })
         .catch(error => {
             console.error('Sync error:', error);

@@ -16,7 +16,7 @@ echo "User logged in: " . (Session::has('user_id') ? "YES" : "NO") . "\n";
 
 if (!Session::has('user_id')) { 
     echo "User not logged in!\n";
-    header('Location: /my-orders-vault/public/'); 
+    header('Location: /public/');
     exit; 
 }
 
@@ -59,5 +59,5 @@ echo "=== END ===\n";
 echo "</pre>";
 ?>
 // אחרי סנכרון - עבור לדף ההזמנות
-// header('Location: /my-orders-vault/public/orders.php');
+// header('Location: /public/orders.php');
 // exit;

@@ -7,7 +7,7 @@ Session::start();
 
 if (!isset($_GET['code'])) {
     Session::setFlash('error', 'אירעה שגיאה בהתחברות. אנא נסה שוב.');
-	header('Location: /my-orders-vault/public/');
+	header('Location: /public/');
     exit;
 }
 
@@ -23,5 +23,5 @@ try {
 	} catch (Exception $e) {
 		Session::setFlash('error', 'שגיאה: ' . $e->getMessage());
 	}
-header('Location: /my-orders-vault/public/');
+header('Location: /public/');
 exit;

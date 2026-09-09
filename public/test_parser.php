@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
     die("לא מחובר");
 }
 
-$config = require __DIR__ . '/../config/config.php';
+$config = require __DIR__ . '/../../config/config.php';
 $userModel = new MyOrdersVault\Models\User();
 $user = $userModel->findById($_SESSION['user_id']);
 

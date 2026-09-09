@@ -2,9 +2,9 @@
     <div class="container">
         <p>&copy; 2025 My Orders Vault. כל הזכויות שמורות.</p>
         <div class="footer-links">
-            <a href="/my-orders-vault/public/terms.php">תנאי שימוש</a>
+            <a href="/public/terms.php">תנאי שימוש</a>
             <span class="footer-sep">·</span>
-            <a href="/my-orders-vault/public/privacy.php">מדיניות פרטיות</a>
+            <a href="/public/privacy.php">מדיניות פרטיות</a>
             <span class="footer-sep">·</span>
             <a href="tel:0528529448">יש שאלות? 0528529448</a>
         </div>

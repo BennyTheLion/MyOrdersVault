@@ -16,7 +16,7 @@ class GmailService {
         $this->userModel = new \MyOrdersVault\Models\User();
         $this->gmailMessageModel = new \MyOrdersVault\Models\GmailMessage();
         
-        $config = require __DIR__ . '/../../config/config.php';
+        $config = require __DIR__ . '/../../../config/config.php';
         $userTokens = $this->userModel->getTokens($userId);
         
         if (!$userTokens) {

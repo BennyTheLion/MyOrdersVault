@@ -1,7 +1,7 @@
 <?php
 namespace MyOrdersVault\Models;
 
-use MyOrdersVault\config\Database;  // 👈 זה התיקון החשוב!
+use MyOrdersVault\Config\Database;  // 👈 זה התיקון החשוב!
 use PDO;
 
 class Order {

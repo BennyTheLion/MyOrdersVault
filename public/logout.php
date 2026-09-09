@@ -4,5 +4,5 @@ use MyOrdersVault\Core\Session;
 
 Session::start();
 Session::destroy();
-header('Location: /my-orders-vault/public/');
+header('Location: /public/');
 exit;

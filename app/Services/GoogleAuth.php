@@ -10,7 +10,7 @@ class GoogleAuth {
     private $userModel;
     
     public function __construct() {
-        $config = require __DIR__ . '/../../config/config.php';
+        $config = require __DIR__ . '/../../../config/config.php';
         
         $this->client = new Client();
         $this->client->setClientId($config['google']['client_id']);

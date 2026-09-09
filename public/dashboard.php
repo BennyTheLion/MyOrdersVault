@@ -5,7 +5,7 @@ use MyOrdersVault\Models\Order;
 
 Session::start();
 if (!Session::has('user_id')) { 
-    header('Location: /my-orders-vault/public/'); 
+    header('Location: /public/');
     exit; 
 }
 
@@ -212,7 +212,7 @@ $recentOrders = $orderModel->getRecentOrders($userId, 10);
                         <td colspan="5" class="text-center py-5">
                             <i class="fas fa-inbox fa-3x mb-3 d-block text-muted"></i>
                             <p>אין הזמנות להצגה</p>
-                            <a href="/my-orders-vault/public/sync.php" class="btn btn-primary btn-sm">
+                            <a href="/public/sync.php" class="btn btn-primary btn-sm">
                                 <i class="fas fa-sync-alt"></i> סנכרן עכשיו
                             </a>
                         </td>
@@ -237,7 +237,7 @@ $recentOrders = $orderModel->getRecentOrders($userId, 10);
         </div>
         
         <div class="text-center mt-4">
-            <a href="/my-orders-vault/public/orders.php" class="btn btn-primary">
+            <a href="/public/orders.php" class="btn btn-primary">
                 <i class="fas fa-arrow-left"></i> צפה בכל ההזמנות
             </a>
         </div>

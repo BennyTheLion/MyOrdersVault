@@ -5,7 +5,7 @@ use MyOrdersVault\Models\Order;
 
 Session::start();
 if (!Session::has('user_id')) { 
-    header('Location: /my-orders-vault/public/'); 
+    header('Location: /public/'); 
     exit; 
 }
 
@@ -75,7 +75,7 @@ require_once __DIR__ . '/includes/header.php'; ?>
                 <button type="submit" class="btn-search">
                     <i class="fas fa-search"></i> חפש
                 </button>
-                <a href="/my-orders-vault/public/orders.php" class="btn-reset">
+                <a href="/public/orders.php" class="btn-reset">
                     <i class="fas fa-undo"></i> נקה
                 </a>
             </div>
@@ -216,7 +216,7 @@ require_once __DIR__ . '/includes/header.php'; ?>
         modal.show();
         
         try {
-            const response = await fetch(`/my-orders-vault/public/api/order-details.php?id=${orderId}`);
+            const response = await fetch(`/public/api/order-details.php?id=${orderId}`);
             const data = await response.json();
             
             if (data.success) {
