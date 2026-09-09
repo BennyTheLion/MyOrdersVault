@@ -1,5 +1,5 @@
 <?php
-namespace MyOrdersVault\config;
+namespace MyOrdersVault\Config;
 
 
 
