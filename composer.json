@@ -1,0 +1,22 @@
+{
+    "name": "my-orders-vault/mvp",
+    "description": "My Orders Vault - Centralize all your online orders from Gmail",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "google/apiclient": "^2.15",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyOrdersVault\\": "app/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

@@ -1,0 +1,2353 @@
+========================================
+[2026-06-02 02:19:20] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: -collapse
+Store Name: כללי
+Gmail Message ID: 19e84ab54948e596
+Thread ID: 19e84ab54948e596
+Order Date: 2026-06-02 02:19:20
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:20] ✅ ORDER SAVED! ID: 39, Thread ID: 19e84ab54948e596
+========================================
+[2026-06-02 02:19:21] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: entity
+Store Name: כללי
+Gmail Message ID: 19e8454f8c2bfe2d
+Thread ID: 19e8454f8c2bfe2d
+Order Date: 2026-06-02 02:19:21
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:21] ✅ ORDER SAVED! ID: 40, Thread ID: 19e8454f8c2bfe2d
+========================================
+[2026-06-02 02:19:21] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@x.ai
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e82ea26f8e0ee8
+Thread ID: 19e82ea26f8e0ee8
+Order Date: 2026-06-02 02:19:21
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:21] ✅ ORDER SAVED! ID: 41, Thread ID: 19e82ea26f8e0ee8
+========================================
+[2026-06-02 02:19:21] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: s-app
+Store Name: כללי
+Gmail Message ID: 19e809380a9a4691
+Thread ID: 19e7e527c9de2b8a
+Order Date: 2026-06-02 02:19:21
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:21] ✅ ORDER SAVED! ID: 42, Thread ID: 19e7e527c9de2b8a
+========================================
+[2026-06-02 02:19:22] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: s-app
+Store Name: כללי
+Gmail Message ID: 19e8056a02edc167
+Thread ID: 19e7e527c9de2b8a
+Order Date: 2026-06-02 02:19:22
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:22] ⏭️ ORDER ALREADY EXISTS - SKIPPED: s-app
+========================================
+[2026-06-02 02:19:22] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-fa4211afc0
+Store Name: כללי
+Gmail Message ID: 19e7e703c1f2ee53
+Thread ID: 19e7e703c1f2ee53
+Order Date: 2026-06-02 02:19:22
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:22] ✅ ORDER SAVED! ID: 43, Thread ID: 19e7e703c1f2ee53
+========================================
+[2026-06-02 02:19:23] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-1f2dfc600d
+Store Name: כללי
+Gmail Message ID: 19e7e527c9de2b8a
+Thread ID: 19e7e527c9de2b8a
+Order Date: 2026-06-02 02:19:23
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:23] ✅ ORDER SAVED! ID: 44, Thread ID: 19e7e527c9de2b8a
+========================================
+[2026-06-02 02:19:23] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e7e3bbaeb62d40
+Thread ID: 19e7e3bbaeb62d40
+Order Date: 2026-06-02 02:19:23
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:23] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:23] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-ca72358e02
+Store Name: כללי
+Gmail Message ID: 19e7c98a96c85bb6
+Thread ID: 19e7c98a96c85bb6
+Order Date: 2026-06-02 02:19:23
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:23] ✅ ORDER SAVED! ID: 45, Thread ID: 19e7c98a96c85bb6
+========================================
+[2026-06-02 02:19:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e786734727221a
+Thread ID: 19e786734727221a
+Order Date: 2026-05-30 00:00:00
+Total Amount: 10
+Currency: USD
+========================================
+[2026-06-02 02:19:24] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: video-tutorials
+Store Name: כללי
+Gmail Message ID: 19e777a1a094ec3f
+Thread ID: 19e777a1a094ec3f
+Order Date: 2026-06-02 02:19:24
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:24] ✅ ORDER SAVED! ID: 46, Thread ID: 19e777a1a094ec3f
+========================================
+[2026-06-02 02:19:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-e8c2414ed5
+Store Name: כללי
+Gmail Message ID: 19e6f8d5f235cf69
+Thread ID: 19e6f8d5f235cf69
+Order Date: 2026-06-02 02:19:24
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:24] ✅ ORDER SAVED! ID: 47, Thread ID: 19e6f8d5f235cf69
+========================================
+[2026-06-02 02:19:25] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e6c9c31682a901
+Thread ID: 19e6c9c31682a901
+Order Date: 2026-06-02 02:19:25
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:25] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:25] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-4f07326ce8
+Store Name: כללי
+Gmail Message ID: 19e6b7f7d8883d5d
+Thread ID: 19e6b7f7d8883d5d
+Order Date: 2026-06-02 02:19:25
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:25] ✅ ORDER SAVED! ID: 48, Thread ID: 19e6b7f7d8883d5d
+========================================
+[2026-06-02 02:19:25] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e650d9e8de6b64
+Thread ID: 19e650d9e8de6b64
+Order Date: 2026-06-02 02:19:25
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:25] ✅ ORDER SAVED! ID: 49, Thread ID: 19e650d9e8de6b64
+========================================
+[2026-06-02 02:19:26] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: sMrGeqnLe8qwFQt3xUXj
+Store Name: כללי
+Gmail Message ID: 19e64f4d7d5ecad6
+Thread ID: 19e64f4d7d5ecad6
+Order Date: 2026-06-02 02:19:26
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:26] ✅ ORDER SAVED! ID: 50, Thread ID: 19e64f4d7d5ecad6
+========================================
+[2026-06-02 02:19:26] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-1e50da6714
+Store Name: כללי
+Gmail Message ID: 19e63dd183c6fe5d
+Thread ID: 19e63dd183c6fe5d
+Order Date: 2025-03-03 00:00:00
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:26] ✅ ORDER SAVED! ID: 51, Thread ID: 19e63dd183c6fe5d
+========================================
+[2026-06-02 02:19:26] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: elines
+Store Name: כללי
+Gmail Message ID: 19e62dd05e91b0b8
+Thread ID: 19e62dd05e91b0b8
+Order Date: 2026-06-02 02:19:26
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:26] ✅ ORDER SAVED! ID: 52, Thread ID: 19e62dd05e91b0b8
+========================================
+[2026-06-02 02:19:27] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e6250639a1c59d
+Thread ID: 19e6250639a1c59d
+Order Date: 2026-06-02 02:19:27
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:27] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:27] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: ence
+Store Name: כללי
+Gmail Message ID: 19e601732922f71e
+Thread ID: 19e601732922f71e
+Order Date: 2026-06-02 02:19:27
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:27] ✅ ORDER SAVED! ID: 53, Thread ID: 19e601732922f71e
+========================================
+[2026-06-02 02:19:27] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e54580b8380f9b
+Thread ID: 19e54580b8380f9b
+Order Date: 2026-06-02 02:19:27
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:27] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:28] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e5074408aed0c8
+Thread ID: 19e5074408aed0c8
+Order Date: 2026-06-02 02:19:28
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:28] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:28] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e4f3268961c24e
+Thread ID: 19e4f3268961c24e
+Order Date: 2026-05-22 00:00:00
+Total Amount: 10
+Currency: USD
+========================================
+[2026-06-02 02:19:28] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:28] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e4db522c0aaebf
+Thread ID: 19e4db522c0aaebf
+Order Date: 2026-06-02 02:19:28
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:28] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:29] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: help@epicgames.com
+Order Number: for
+Store Name: PayPal
+Gmail Message ID: 19e4c72d3245f638
+Thread ID: 19e4c72d3245f638
+Order Date: NULL
+Total Amount: NULL
+Currency: USD
+========================================
+[2026-06-02 02:19:29] ✅ ORDER SAVED! ID: 54, Thread ID: 19e4c72d3245f638
+========================================
+[2026-06-02 02:19:29] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: omeronov@gmail.com
+Order Number: GEN-20bce04127
+Store Name: כללי
+Gmail Message ID: 19e4b04f74978f0d
+Thread ID: 19e4b04f74978f0d
+Order Date: 2026-06-02 02:19:29
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:29] ✅ ORDER SAVED! ID: 55, Thread ID: 19e4b04f74978f0d
+========================================
+[2026-06-02 02:19:29] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-f878fc8030
+Store Name: כללי
+Gmail Message ID: 19e4801a5c5c9bcf
+Thread ID: 19e4801a5c5c9bcf
+Order Date: 2026-06-02 02:19:29
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:29] ✅ ORDER SAVED! ID: 56, Thread ID: 19e4801a5c5c9bcf
+========================================
+[2026-06-02 02:19:30] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: elirankobby@gmail.com
+Order Number: s-tracker
+Store Name: כללי
+Gmail Message ID: 19e45c6e7ae04c74
+Thread ID: 19e45c6e7ae04c74
+Order Date: 2026-06-02 02:19:30
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:30] ✅ ORDER SAVED! ID: 57, Thread ID: 19e45c6e7ae04c74
+========================================
+[2026-06-02 02:19:30] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: rbRuop4TaMuDoqJtUcbC
+Store Name: כללי
+Gmail Message ID: 19e4584876f99b42
+Thread ID: 19e4584876f99b42
+Order Date: 2026-06-02 02:19:30
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:30] ✅ ORDER SAVED! ID: 58, Thread ID: 19e4584876f99b42
+========================================
+[2026-06-02 02:19:30] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: setting-up-an-ai-age
+Store Name: כללי
+Gmail Message ID: 19e457bdeffc4783
+Thread ID: 19e457bdeffc4783
+Order Date: 2026-06-02 02:19:30
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:30] ✅ ORDER SAVED! ID: 59, Thread ID: 19e457bdeffc4783
+========================================
+[2026-06-02 02:19:31] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e43db807b9bc2d
+Thread ID: 19e41a84ea542c21
+Order Date: 2026-06-02 02:19:31
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:31] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:31] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e43d57a0b0be03
+Thread ID: 19e41a84ea542c21
+Order Date: 2026-06-02 02:19:31
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:31] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:31] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e436cab76c3c80
+Thread ID: 19e436cab76c3c80
+Order Date: 2026-06-02 02:19:31
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:31] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:31] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e4349d0c38105a
+Thread ID: 19e41a84ea542c21
+Order Date: 2026-06-02 02:19:31
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:31] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:32] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e4345dff55eb19
+Thread ID: 19e41a84ea542c21
+Order Date: 2026-06-02 02:19:32
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:32] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:32] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e4344a202252f3
+Thread ID: 19e41a84ea542c21
+Order Date: 2026-06-02 02:19:32
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:32] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:32] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-c5a02bd9ea
+Store Name: כללי
+Gmail Message ID: 19e4207115212d46
+Thread ID: 19e4207115212d46
+Order Date: 2026-06-02 02:19:32
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:32] ✅ ORDER SAVED! ID: 60, Thread ID: 19e4207115212d46
+========================================
+[2026-06-02 02:19:33] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e41a84ea542c21
+Thread ID: 19e41a84ea542c21
+Order Date: 2026-06-02 02:19:33
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:33] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:33] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-df84ebcd0b
+Store Name: כללי
+Gmail Message ID: 19e41039e78742d3
+Thread ID: 19e40e1f486cb856
+Order Date: 2026-06-02 02:19:33
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:33] ✅ ORDER SAVED! ID: 61, Thread ID: 19e40e1f486cb856
+========================================
+[2026-06-02 02:19:33] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e41012e6600637
+Thread ID: 19e41012e6600637
+Order Date: 2026-06-02 02:19:33
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:33] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:33] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-df84ebcd0b
+Store Name: כללי
+Gmail Message ID: 19e40e1f486cb856
+Thread ID: 19e40e1f486cb856
+Order Date: 2026-06-02 02:19:33
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:33] ⏭️ ORDER ALREADY EXISTS - SKIPPED: GEN-df84ebcd0b
+========================================
+[2026-06-02 02:19:34] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-f3ba371bc0
+Store Name: כללי
+Gmail Message ID: 19e3ed106bec1b81
+Thread ID: 19e3ed106bec1b81
+Order Date: 2026-06-02 02:19:34
+Total Amount: 3
+Currency: USD
+========================================
+[2026-06-02 02:19:34] ✅ ORDER SAVED! ID: 62, Thread ID: 19e3ed106bec1b81
+========================================
+[2026-06-02 02:19:34] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: s-cannes-scroll
+Store Name: כללי
+Gmail Message ID: 19e3c4f2739e14fd
+Thread ID: 19e3c4f2739e14fd
+Order Date: 2026-06-02 02:19:34
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:34] ✅ ORDER SAVED! ID: 63, Thread ID: 19e3c4f2739e14fd
+========================================
+[2026-06-02 02:19:34] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-8d77355730
+Store Name: כללי
+Gmail Message ID: 19e3b8bd073d3b98
+Thread ID: 19e3b8bd073d3b98
+Order Date: 2026-06-02 02:19:34
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:34] ✅ ORDER SAVED! ID: 64, Thread ID: 19e3b8bd073d3b98
+========================================
+[2026-06-02 02:19:34] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-5304e05657
+Store Name: כללי
+Gmail Message ID: 19e3b640d7571fe6
+Thread ID: 19e3b640d7571fe6
+Order Date: 2026-06-02 02:19:34
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:34] ✅ ORDER SAVED! ID: 65, Thread ID: 19e3b640d7571fe6
+========================================
+[2026-06-02 02:19:35] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-dfeeae3c75
+Store Name: כללי
+Gmail Message ID: 19e39b152b13d80f
+Thread ID: 19e39b152b13d80f
+Order Date: 2026-06-02 02:19:35
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:35] ✅ ORDER SAVED! ID: 66, Thread ID: 19e39b152b13d80f
+========================================
+[2026-06-02 02:19:35] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: for
+Store Name: PayPal
+Gmail Message ID: 19e331e1c019893e
+Thread ID: 19e331e1c019893e
+Order Date: NULL
+Total Amount: NULL
+Currency: USD
+========================================
+[2026-06-02 02:19:35] ⏭️ ORDER ALREADY EXISTS - SKIPPED: for
+========================================
+[2026-06-02 02:19:35] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e2c67d5d1a35b2
+Thread ID: 19e2c67d5d1a35b2
+Order Date: 2026-06-02 02:19:35
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:35] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:36] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e2b23d17b83e0a
+Thread ID: 19e2b23d17b83e0a
+Order Date: 2026-06-02 02:19:36
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:36] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:36] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e29ab1a4c88e8a
+Thread ID: 19e29ab1a4c88e8a
+Order Date: 2026-06-02 02:19:36
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:36] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:36] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: aIWfNAmaH3Ff1dIetsX3
+Store Name: כללי
+Gmail Message ID: 19e26b2210d9f2cd
+Thread ID: 19e26b2210d9f2cd
+Order Date: 2026-06-02 02:19:36
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:36] ✅ ORDER SAVED! ID: 67, Thread ID: 19e26b2210d9f2cd
+========================================
+[2026-06-02 02:19:37] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e20dbdc94aae0f
+Thread ID: 19e20dbdc94aae0f
+Order Date: 2026-05-13 00:00:00
+Total Amount: 10
+Currency: USD
+========================================
+[2026-06-02 02:19:37] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:37] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e1f5f182d4ef10
+Thread ID: 19e1f5f182d4ef10
+Order Date: 2026-06-02 02:19:37
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:37] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:37] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@thunderbit.com
+Order Number: entifies
+Store Name: כללי
+Gmail Message ID: 19e1e2e3aeddff1e
+Thread ID: 19e1e2e3aeddff1e
+Order Date: 2026-06-02 02:19:37
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:37] ✅ ORDER SAVED! ID: 68, Thread ID: 19e1e2e3aeddff1e
+========================================
+[2026-06-02 02:19:37] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e1cf4a0d87b86b
+Thread ID: 19e1cf4a0d87b86b
+Order Date: 2026-06-02 02:19:37
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:37] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:38] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-07bbf03e73
+Store Name: כללי
+Gmail Message ID: 19e1a91dac7b3468
+Thread ID: 19e1a91dac7b3468
+Order Date: 2026-06-02 02:19:38
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:38] ✅ ORDER SAVED! ID: 69, Thread ID: 19e1a91dac7b3468
+========================================
+[2026-06-02 02:19:38] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19e192eca1287be1
+Thread ID: 19e192eca1287be1
+Order Date: 2026-06-02 02:19:38
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:38] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:38] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: ffffff
+Store Name: כללי
+Gmail Message ID: 19e1918a3549d72e
+Thread ID: 19e1918a3549d72e
+Order Date: 2026-06-02 02:19:38
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:38] ✅ ORDER SAVED! ID: 70, Thread ID: 19e1918a3549d72e
+========================================
+[2026-06-02 02:19:39] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-9c20c4b755
+Store Name: כללי
+Gmail Message ID: 19e1846b5e593d6f
+Thread ID: 19e15a838d8bdc44
+Order Date: 2026-06-02 02:19:39
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:39] ✅ ORDER SAVED! ID: 71, Thread ID: 19e15a838d8bdc44
+========================================
+[2026-06-02 02:19:39] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-9c20c4b755
+Store Name: כללי
+Gmail Message ID: 19e1825b7537decd
+Thread ID: 19e15a838d8bdc44
+Order Date: 2026-06-02 02:19:39
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:39] ⏭️ ORDER ALREADY EXISTS - SKIPPED: GEN-9c20c4b755
+========================================
+[2026-06-02 02:19:39] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: AnV2MnITIFZbyZXK7GcT
+Store Name: כללי
+Gmail Message ID: 19e175db1727dd23
+Thread ID: 19e175db1727dd23
+Order Date: 2026-06-02 02:19:39
+Total Amount: 50
+Currency: USD
+========================================
+[2026-06-02 02:19:39] ✅ ORDER SAVED! ID: 72, Thread ID: 19e175db1727dd23
+========================================
+[2026-06-02 02:19:39] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-9c20c4b755
+Store Name: כללי
+Gmail Message ID: 19e15b0dbf237625
+Thread ID: 19e15a838d8bdc44
+Order Date: 2026-06-02 02:19:39
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:39] ⏭️ ORDER ALREADY EXISTS - SKIPPED: GEN-9c20c4b755
+========================================
+[2026-06-02 02:19:40] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-f124ec0fb0
+Store Name: כללי
+Gmail Message ID: 19e15a926ff8938d
+Thread ID: 19e15a926ff8938d
+Order Date: 2026-06-02 02:19:40
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:40] ✅ ORDER SAVED! ID: 73, Thread ID: 19e15a926ff8938d
+========================================
+[2026-06-02 02:19:40] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-4fa647069f
+Store Name: כללי
+Gmail Message ID: 19e15a91a5357386
+Thread ID: 19e15a838d8bdc44
+Order Date: 2026-06-02 02:19:40
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:40] ✅ ORDER SAVED! ID: 74, Thread ID: 19e15a838d8bdc44
+========================================
+[2026-06-02 02:19:40] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-4fa647069f
+Store Name: כללי
+Gmail Message ID: 19e15a838d8bdc44
+Thread ID: 19e15a838d8bdc44
+Order Date: 2026-06-02 02:19:40
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:40] ⏭️ ORDER ALREADY EXISTS - SKIPPED: GEN-4fa647069f
+========================================
+[2026-06-02 02:19:41] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: run-tests-choose-win
+Store Name: כללי
+Gmail Message ID: 19e1581a4624bda7
+Thread ID: 19e1581a4624bda7
+Order Date: 2026-06-02 02:19:41
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:41] ✅ ORDER SAVED! ID: 75, Thread ID: 19e1581a4624bda7
+========================================
+[2026-06-02 02:19:41] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-c9645fcc2f
+Store Name: כללי
+Gmail Message ID: 19e156e89825fbaa
+Thread ID: 19e156e89825fbaa
+Order Date: 2026-06-02 02:19:41
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:41] ✅ ORDER SAVED! ID: 76, Thread ID: 19e156e89825fbaa
+========================================
+[2026-06-02 02:19:41] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e0862e45231f45
+Thread ID: 19e0862e45231f45
+Order Date: 2026-06-02 02:19:41
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:41] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:41] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-5703d36080
+Store Name: כללי
+Gmail Message ID: 19e04a0468c1b700
+Thread ID: 19e04a0468c1b700
+Order Date: 2026-06-02 02:19:41
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:41] ✅ ORDER SAVED! ID: 77, Thread ID: 19e04a0468c1b700
+========================================
+[2026-06-02 02:19:42] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19e0334dc7d95f0e
+Thread ID: 19e0334dc7d95f0e
+Order Date: 2026-06-02 02:19:42
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:42] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:42] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-93fc345f79
+Store Name: כללי
+Gmail Message ID: 19e012b25bf40a9f
+Thread ID: 19e012b25bf40a9f
+Order Date: 2026-06-02 05:01:26
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:42] ✅ ORDER SAVED! ID: 78, Thread ID: 19e012b25bf40a9f
+========================================
+[2026-06-02 02:19:42] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-87e8c53322
+Store Name: כללי
+Gmail Message ID: 19e00d448d54980e
+Thread ID: 19e00d448d54980e
+Order Date: 2026-06-02 02:19:42
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:42] ✅ ORDER SAVED! ID: 79, Thread ID: 19e00d448d54980e
+========================================
+[2026-06-02 02:19:43] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: pw4Y6gNnqWj7-vvox2S5
+Store Name: כללי
+Gmail Message ID: 19dff5f9deba1f87
+Thread ID: 19dff5f9deba1f87
+Order Date: 2026-06-02 02:19:43
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:43] ✅ ORDER SAVED! ID: 80, Thread ID: 19dff5f9deba1f87
+========================================
+[2026-06-02 02:19:43] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: tBPIj3jjbB9dWnoXXYTI
+Store Name: כללי
+Gmail Message ID: 19dff4461bf48e07
+Thread ID: 19dff4461bf48e07
+Order Date: 2026-06-02 02:19:43
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:43] ✅ ORDER SAVED! ID: 81, Thread ID: 19dff4461bf48e07
+========================================
+[2026-06-02 02:19:43] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: N9sAZ-QTg7jFTPo70zMM
+Store Name: כללי
+Gmail Message ID: 19dff23a12a611cc
+Thread ID: 19dff23a12a611cc
+Order Date: 2026-06-02 02:19:43
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:43] ✅ ORDER SAVED! ID: 82, Thread ID: 19dff23a12a611cc
+========================================
+[2026-06-02 02:19:44] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19dfccd5004a49ce
+Thread ID: 19dfccd5004a49ce
+Order Date: 2026-06-02 02:19:44
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:44] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:44] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-a77adb9890
+Store Name: כללי
+Gmail Message ID: 19dfc47c2deb5c5b
+Thread ID: 19dfc47c2deb5c5b
+Order Date: 2026-06-02 02:19:44
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:44] ✅ ORDER SAVED! ID: 83, Thread ID: 19dfc47c2deb5c5b
+========================================
+[2026-06-02 02:19:44] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19df8e81e797538f
+Thread ID: 19df8e81e797538f
+Order Date: 2026-06-02 02:19:44
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:44] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:44] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: sTz5DAF9ydtPKLmWQE89
+Store Name: כללי
+Gmail Message ID: 19df84d87f6b82f1
+Thread ID: 19df84d87f6b82f1
+Order Date: 2026-06-02 02:19:44
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:44] ✅ ORDER SAVED! ID: 84, Thread ID: 19df84d87f6b82f1
+========================================
+[2026-06-02 02:19:45] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-c1190a4478
+Store Name: כללי
+Gmail Message ID: 19df7756c8982dce
+Thread ID: 19df7756c8982dce
+Order Date: 2026-06-02 02:19:45
+Total Amount: 2022
+Currency: USD
+========================================
+[2026-06-02 02:19:45] ✅ ORDER SAVED! ID: 85, Thread ID: 19df7756c8982dce
+========================================
+[2026-06-02 02:19:45] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: get-inspiration
+Store Name: כללי
+Gmail Message ID: 19df72614f444551
+Thread ID: 19df72614f444551
+Order Date: 2026-06-02 02:19:45
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:45] ✅ ORDER SAVED! ID: 86, Thread ID: 19df72614f444551
+========================================
+[2026-06-02 02:19:45] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19df310a305ef8bc
+Thread ID: 19df310a305ef8bc
+Order Date: 2026-05-04 00:00:00
+Total Amount: 10
+Currency: USD
+========================================
+[2026-06-02 02:19:45] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:45] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-64dd1350d2
+Store Name: כללי
+Gmail Message ID: 19df1756608e9463
+Thread ID: 19df1756608e9463
+Order Date: 2026-06-02 02:19:45
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:45] ✅ ORDER SAVED! ID: 87, Thread ID: 19df1756608e9463
+========================================
+[2026-06-02 02:19:46] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-80ca775b7d
+Store Name: כללי
+Gmail Message ID: 19dee00a7a5793e5
+Thread ID: 19dee00a7a5793e5
+Order Date: 2026-06-02 02:19:46
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:46] ✅ ORDER SAVED! ID: 88, Thread ID: 19dee00a7a5793e5
+========================================
+[2026-06-02 02:19:46] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-856155c76a
+Store Name: כללי
+Gmail Message ID: 19ded47b023b5f21
+Thread ID: 19ded47b023b5f21
+Order Date: 2026-06-02 02:19:46
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:46] ✅ ORDER SAVED! ID: 89, Thread ID: 19ded47b023b5f21
+========================================
+[2026-06-02 02:19:46] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: security@openrouter.ai
+Order Number: GEN-e23fb5aa68
+Store Name: כללי
+Gmail Message ID: 19de89a697fb6531
+Thread ID: 19de89a697fb6531
+Order Date: 2026-06-02 02:19:46
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:46] ✅ ORDER SAVED! ID: 90, Thread ID: 19de89a697fb6531
+========================================
+[2026-06-02 02:19:47] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-6796b49337
+Store Name: כללי
+Gmail Message ID: 19de599c9e44cc45
+Thread ID: 19de599c9e44cc45
+Order Date: 2026-06-02 02:19:47
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:47] ✅ ORDER SAVED! ID: 91, Thread ID: 19de599c9e44cc45
+========================================
+[2026-06-02 02:19:47] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@hostinger.co
+Order Number: for
+Store Name: PayPal
+Gmail Message ID: 19ddaa0f1d4f7fb1
+Thread ID: 19ddaa0f1d4f7fb1
+Order Date: NULL
+Total Amount: 38.16
+Currency: USD
+========================================
+[2026-06-02 02:19:47] ⏭️ ORDER ALREADY EXISTS - SKIPPED: for
+========================================
+[2026-06-02 02:19:47] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-ec754bb78f
+Store Name: כללי
+Gmail Message ID: 19dd98997a2d42e1
+Thread ID: 19dd98997a2d42e1
+Order Date: 2026-04-30 00:00:00
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:47] ✅ ORDER SAVED! ID: 92, Thread ID: 19dd98997a2d42e1
+========================================
+[2026-06-02 02:19:47] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19dd7442cbe2681c
+Thread ID: 19dd7442cbe2681c
+Order Date: 2026-06-02 02:19:47
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:47] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:48] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: Token
+Store Name: כללי
+Gmail Message ID: 19dd4db9b386bbf6
+Thread ID: 19dd4db9b386bbf6
+Order Date: 2026-06-02 02:19:48
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:48] ⏭️ ORDER ALREADY EXISTS - SKIPPED: Token
+========================================
+[2026-06-02 02:19:48] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: e-your-base44-app-04
+Store Name: כללי
+Gmail Message ID: 19dd4677d65dd08a
+Thread ID: 19dd4677d65dd08a
+Order Date: 2026-06-02 02:19:48
+Total Amount: 3
+Currency: USD
+========================================
+[2026-06-02 02:19:48] ✅ ORDER SAVED! ID: 93, Thread ID: 19dd4677d65dd08a
+========================================
+[2026-06-02 02:19:48] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-be64d095ef
+Store Name: כללי
+Gmail Message ID: 19dd25d72032a311
+Thread ID: 19dd25d72032a311
+Order Date: 2024-04-12 00:00:00
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:48] ✅ ORDER SAVED! ID: 94, Thread ID: 19dd25d72032a311
+========================================
+[2026-06-02 02:19:48] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19dcf020604099d5
+Thread ID: 19dcf020604099d5
+Order Date: 2026-06-02 02:19:48
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:48] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:49] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: omeronov@gmail.com
+Order Number: GEN-944fbfda4f
+Store Name: כללי
+Gmail Message ID: 19dcea244f4eafc3
+Thread ID: 19dcea244f4eafc3
+Order Date: 2026-06-02 02:19:49
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:49] ✅ ORDER SAVED! ID: 95, Thread ID: 19dcea244f4eafc3
+========================================
+[2026-06-02 02:19:49] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-da8d3a42c4
+Store Name: כללי
+Gmail Message ID: 19dcdc897aa6c6c0
+Thread ID: 19dcdc897aa6c6c0
+Order Date: 2026-06-02 02:19:49
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:49] ✅ ORDER SAVED! ID: 96, Thread ID: 19dcdc897aa6c6c0
+========================================
+[2026-06-02 02:19:49] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-6aa419ec2f
+Store Name: כללי
+Gmail Message ID: 19dcd785c2d9f7c7
+Thread ID: 19dcd785c2d9f7c7
+Order Date: 2026-06-02 02:19:49
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:49] ✅ ORDER SAVED! ID: 97, Thread ID: 19dcd785c2d9f7c7
+========================================
+[2026-06-02 02:19:49] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19dccf9eec4f7253
+Thread ID: 19dccf9eec4f7253
+Order Date: 2026-06-02 02:19:49
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:19:49] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:19:50] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: outlook
+Store Name: כללי
+Gmail Message ID: 19dc50f8fbe8de85
+Thread ID: 19dc50f8fbe8de85
+Order Date: 2026-04-25 00:00:00
+Total Amount: 0
+Currency: USD
+========================================
+[2026-06-02 02:19:50] ⏭️ ORDER ALREADY EXISTS - SKIPPED: outlook
+========================================
+[2026-06-02 02:47:08] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: s-app
+Store Name: כללי
+Gmail Message ID: 19e85b4a72ca9d29
+Thread ID: 19e85b4a72ca9d29
+Order Date: 2026-06-02 02:47:08
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-06-02 02:47:08] ⏭️ ORDER ALREADY EXISTS - SKIPPED: s-app
+========================================
+[2026-09-09 21:03:52] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@sc.mail.deepseek.com
+Order Number: GEN-467c51487d
+Store Name: כללי
+Gmail Message ID: 1a086d872453dc83
+Thread ID: 1a086d872453dc83
+Order Date: 2026-09-09 21:03:52
+Total Amount: 0
+Currency: USD
+========================================
+[2026-09-09 21:03:52] ✅ ORDER SAVED! ID: 98, Thread ID: 1a086d872453dc83
+========================================
+[2026-09-09 21:03:55] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@intl.paypal.com
+Order Number: PP-8176c1752c
+Store Name: PayPal
+Gmail Message ID: 1a06ae28005719c3
+Thread ID: 1a06ae28005719c3
+Order Date: NULL
+Total Amount: NULL
+Currency: USD
+========================================
+[2026-09-09 21:03:55] ✅ ORDER SAVED! ID: 99, Thread ID: 1a06ae28005719c3
+========================================
+[2026-09-09 21:03:56] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-34724f5784
+Store Name: כללי
+Gmail Message ID: 1a06938b6ca7c58c
+Thread ID: 1a06938b6ca7c58c
+Order Date: 2026-09-09 21:03:56
+Total Amount: 3
+Currency: USD
+========================================
+[2026-09-09 21:03:56] ✅ ORDER SAVED! ID: 100, Thread ID: 1a06938b6ca7c58c
+========================================
+[2026-09-09 21:03:56] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 595959
+Store Name: כללי
+Gmail Message ID: 1a067e1343559918
+Thread ID: 1a067e1343559918
+Order Date: 2026-09-09 21:03:56
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:03:56] ✅ ORDER SAVED! ID: 101, Thread ID: 1a067e1343559918
+========================================
+[2026-09-09 21:03:58] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: GEN-7d8c3a2bf2
+Store Name: כללי
+Gmail Message ID: 1a05e9b68ba42753
+Thread ID: 1a05e9b68ba42753
+Order Date: 2026-09-09 21:03:57
+Total Amount: 0.25
+Currency: USD
+========================================
+[2026-09-09 21:03:58] ✅ ORDER SAVED! ID: 102, Thread ID: 1a05e9b68ba42753
+========================================
+[2026-09-09 21:03:58] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support-il@decathlon.co.il
+Order Number: 000001
+Store Name: כללי
+Gmail Message ID: 1a0580efb954de52
+Thread ID: 1a0580efb954de52
+Order Date: 2026-12-01 00:00:00
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:03:58] ✅ ORDER SAVED! ID: 103, Thread ID: 1a0580efb954de52
+========================================
+[2026-09-09 21:04:00] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a042c84575c0333
+Thread ID: 1a042c84575c0333
+Order Date: 2026-09-09 21:04:00
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:00] ✅ ORDER SAVED! ID: 104, Thread ID: 1a042c84575c0333
+========================================
+[2026-09-09 21:04:00] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a042bfc7c1eff66
+Thread ID: 1a042bfc7c1eff66
+Order Date: 2026-09-09 21:04:00
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:00] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:01] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a042bfc5c40505e
+Thread ID: 1a042bfc5c40505e
+Order Date: 2026-09-09 21:04:01
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:01] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:01] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a042ba38f8b2501
+Thread ID: 1a042ba38f8b2501
+Order Date: 2026-09-09 21:04:01
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:01] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:02] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 595959
+Store Name: כללי
+Gmail Message ID: 1a03e5f9d23e3609
+Thread ID: 1a03e5f9d23e3609
+Order Date: 2026-09-09 21:04:02
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:02] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 595959
+========================================
+[2026-09-09 21:04:04] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-72846f6a09
+Store Name: כללי
+Gmail Message ID: 1a03c0ffb301ff13
+Thread ID: 1a03c0ffb301ff13
+Order Date: 2026-09-09 21:04:04
+Total Amount: 100
+Currency: USD
+========================================
+[2026-09-09 21:04:04] ✅ ORDER SAVED! ID: 105, Thread ID: 1a03c0ffb301ff13
+========================================
+[2026-09-09 21:04:05] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a03974eda795b95
+Thread ID: 1a03974eda795b95
+Order Date: 2026-09-09 21:04:05
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:05] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:05] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a03974e8591af48
+Thread ID: 1a03974e8591af48
+Order Date: 2026-09-09 21:04:05
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:05] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:05] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a0394fad43666f4
+Thread ID: 1a0394f61e44bbc1
+Order Date: 2026-09-09 21:04:05
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:05] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:06] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a0394f61e44bbc1
+Thread ID: 1a0394f61e44bbc1
+Order Date: 2026-09-09 21:04:06
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:06] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:07] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@sc.mail.deepseek.com
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a029cd2c55290ec
+Thread ID: 1a029cd2c55290ec
+Order Date: 2026-09-09 21:04:07
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:07] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:12] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a01cf34705fe205
+Thread ID: 1a01cf34705fe205
+Order Date: 2026-09-09 21:04:12
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:12] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:13] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a01ca1e854bcf31
+Thread ID: 1a01ca1e854bcf31
+Order Date: 2026-09-09 21:04:13
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:13] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:14] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a01c61e484fff48
+Thread ID: 1a01c61e484fff48
+Order Date: 2026-09-09 21:04:14
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:14] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:14] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: 000000
+Store Name: כללי
+Gmail Message ID: 1a01c39eff40be0b
+Thread ID: 1a01c39eff40be0b
+Order Date: 2026-09-09 21:04:14
+Total Amount: NULL
+Currency: N/A
+========================================
+[2026-09-09 21:04:14] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 000000
+========================================
+[2026-09-09 21:04:16] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: PP-57ca61b9a8
+Store Name: PayPal
+Gmail Message ID: 1a00ce7395aecf7c
+Thread ID: 1a00ce7395aecf7c
+Order Date: NULL
+Total Amount: NULL
+Currency: USD
+========================================
+[2026-09-09 21:04:16] ✅ ORDER SAVED! ID: 106, Thread ID: 1a00ce7395aecf7c
+========================================
+[2026-09-09 21:04:18] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: PP-05ad7949a7
+Store Name: PayPal
+Gmail Message ID: 19ffdf993c158ef0
+Thread ID: 19ffdf993c158ef0
+Order Date: NULL
+Total Amount: 10.6
+Currency: USD
+========================================
+[2026-09-09 21:04:18] ✅ ORDER SAVED! ID: 107, Thread ID: 19ffdf993c158ef0
+========================================
+[2026-09-09 21:34:38] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-d9976e106c
+Store Name: כללי
+Gmail Message ID: 1a042bfc5c40505e
+Thread ID: 1a042bfc5c40505e
+Order Date: 2026-09-09 21:34:38
+Total Amount: 267
+Currency: ILS
+========================================
+[2026-09-09 21:34:38] ✅ ORDER SAVED! ID: 108, Thread ID: 1a042bfc5c40505e
+========================================
+[2026-09-09 21:34:41] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-b1912c8d5d
+Store Name: כללי
+Gmail Message ID: 1a03974e8591af48
+Thread ID: 1a03974e8591af48
+Order Date: 2026-09-09 21:34:41
+Total Amount: 92
+Currency: ILS
+========================================
+[2026-09-09 21:34:41] ✅ ORDER SAVED! ID: 109, Thread ID: 1a03974e8591af48
+========================================
+[2026-09-09 21:57:34] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 7Y126883DW438903D
+Store Name: PayPal
+Gmail Message ID: 19f953f4577984e0
+Thread ID: 19f953f4577984e0
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:57:34] ✅ ORDER SAVED! ID: 110, Thread ID: 19f953f4577984e0
+========================================
+[2026-09-09 21:57:48] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 8VK59758G3416784S
+Store Name: PayPal
+Gmail Message ID: 19f6d4241af23b05
+Thread ID: 19f6d4241af23b05
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:57:48] ✅ ORDER SAVED! ID: 111, Thread ID: 19f6d4241af23b05
+========================================
+[2026-09-09 21:57:52] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 68G60753X5360715K
+Store Name: PayPal
+Gmail Message ID: 19f554d38624e7f4
+Thread ID: 19f5514379deae15
+Order Date: NULL
+Total Amount: 5.07
+Currency: USD
+========================================
+[2026-09-09 21:57:52] ✅ ORDER SAVED! ID: 112, Thread ID: 19f5514379deae15
+========================================
+[2026-09-09 21:57:53] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 29R93418XL303672M
+Store Name: PayPal
+Gmail Message ID: 19f552d2c60c2348
+Thread ID: 19f5514379deae15
+Order Date: NULL
+Total Amount: 5.5
+Currency: USD
+========================================
+[2026-09-09 21:57:53] ✅ ORDER SAVED! ID: 113, Thread ID: 19f5514379deae15
+========================================
+[2026-09-09 21:57:53] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 1TB26646TJ2092147
+Store Name: PayPal
+Gmail Message ID: 19f5514379deae15
+Thread ID: 19f5514379deae15
+Order Date: NULL
+Total Amount: 8.5
+Currency: USD
+========================================
+[2026-09-09 21:57:53] ✅ ORDER SAVED! ID: 114, Thread ID: 19f5514379deae15
+========================================
+[2026-09-09 21:57:56] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: info@roblox.com
+Order Number: 2T543579Y2788652D
+Store Name: PayPal
+Gmail Message ID: 19f4b970b862ee00
+Thread ID: 19f4b970b862ee00
+Order Date: NULL
+Total Amount: 3625
+Currency: USD
+========================================
+[2026-09-09 21:57:56] ✅ ORDER SAVED! ID: 115, Thread ID: 19f4b970b862ee00
+========================================
+[2026-09-09 21:58:00] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 88291855JJ0878003
+Store Name: PayPal
+Gmail Message ID: 19f29c277144bbce
+Thread ID: 19f29c277144bbce
+Order Date: NULL
+Total Amount: 10
+Currency: USD
+========================================
+[2026-09-09 21:58:00] ✅ ORDER SAVED! ID: 116, Thread ID: 19f29c277144bbce
+========================================
+[2026-09-09 21:58:03] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 85V69191MX686032M
+Store Name: PayPal
+Gmail Message ID: 19f1b214335f6cac
+Thread ID: 19f1b214335f6cac
+Order Date: NULL
+Total Amount: 10
+Currency: USD
+========================================
+[2026-09-09 21:58:03] ✅ ORDER SAVED! ID: 117, Thread ID: 19f1b214335f6cac
+========================================
+[2026-09-09 21:58:06] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 5XN34018FX746490C
+Store Name: PayPal
+Gmail Message ID: 19ef9b9eaffb352e
+Thread ID: 19ef9b9eaffb352e
+Order Date: NULL
+Total Amount: 10
+Currency: USD
+========================================
+[2026-09-09 21:58:06] ✅ ORDER SAVED! ID: 118, Thread ID: 19ef9b9eaffb352e
+========================================
+[2026-09-09 21:58:07] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: PP-7e40fa7f0f
+Store Name: PayPal
+Gmail Message ID: 19eedf0664c7f603
+Thread ID: 19eedf0664c7f603
+Order Date: NULL
+Total Amount: NULL
+Currency: USD
+========================================
+[2026-09-09 21:58:07] ✅ ORDER SAVED! ID: 119, Thread ID: 19eedf0664c7f603
+========================================
+[2026-09-09 21:58:11] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 20C15313WF169251A
+Store Name: PayPal
+Gmail Message ID: 19ed2c342f80cf23
+Thread ID: 19ed2c342f80cf23
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:58:11] ✅ ORDER SAVED! ID: 120, Thread ID: 19ed2c342f80cf23
+========================================
+[2026-09-09 21:58:29] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: help@epicgames.com
+Order Number: 7J138759S0851383F
+Store Name: PayPal
+Gmail Message ID: 19e9e1898e7c1deb
+Thread ID: 19e9e1898e7c1deb
+Order Date: NULL
+Total Amount: 450
+Currency: USD
+========================================
+[2026-09-09 21:58:29] ✅ ORDER SAVED! ID: 121, Thread ID: 19e9e1898e7c1deb
+========================================
+[2026-09-09 21:58:42] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 5LC06082UH6978906
+Store Name: PayPal
+Gmail Message ID: 19dafdbfab37b252
+Thread ID: 19dafdbfab37b252
+Order Date: NULL
+Total Amount: 2
+Currency: USD
+========================================
+[2026-09-09 21:58:42] ✅ ORDER SAVED! ID: 122, Thread ID: 19dafdbfab37b252
+========================================
+[2026-09-09 21:58:43] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@hostinger.co
+Order Number: 39L14074YD2702616
+Store Name: PayPal
+Gmail Message ID: 19da148f10335707
+Thread ID: 19da148f10335707
+Order Date: NULL
+Total Amount: 203.88
+Currency: USD
+========================================
+[2026-09-09 21:58:43] ✅ ORDER SAVED! ID: 123, Thread ID: 19da148f10335707
+========================================
+[2026-09-09 21:58:45] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 3YW0309591724980U
+Store Name: PayPal
+Gmail Message ID: 19da07bc5f38dc61
+Thread ID: 19da07bc5f38dc61
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:58:45] ✅ ORDER SAVED! ID: 124, Thread ID: 19da07bc5f38dc61
+========================================
+[2026-09-09 21:58:48] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 0T726593NG165781N
+Store Name: PayPal
+Gmail Message ID: 19d989f68ed8a5d7
+Thread ID: 19d989f68ed8a5d7
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:58:48] ✅ ORDER SAVED! ID: 125, Thread ID: 19d989f68ed8a5d7
+========================================
+[2026-09-09 21:58:49] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@hostinger.co
+Order Number: 0GY08335093555449
+Store Name: PayPal
+Gmail Message ID: 19d979a1740d413c
+Thread ID: 19d979a1740d413c
+Order Date: NULL
+Total Amount: 20.19
+Currency: USD
+========================================
+[2026-09-09 21:58:49] ✅ ORDER SAVED! ID: 126, Thread ID: 19d979a1740d413c
+========================================
+[2026-09-09 21:59:29] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 34V897147D3991238
+Store Name: PayPal
+Gmail Message ID: 19d029ee1a7e5910
+Thread ID: 19d029ee1a7e5910
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:59:29] ✅ ORDER SAVED! ID: 127, Thread ID: 19d029ee1a7e5910
+========================================
+[2026-09-09 21:59:32] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 98P44294EE7564533
+Store Name: PayPal
+Gmail Message ID: 19cfbd360e5dd19c
+Thread ID: 19cfbd360e5dd19c
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:59:32] ✅ ORDER SAVED! ID: 128, Thread ID: 19cfbd360e5dd19c
+========================================
+[2026-09-09 21:59:32] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 0H426523NW772684P
+Store Name: PayPal
+Gmail Message ID: 19cf9311c50e014d
+Thread ID: 19cf9311c50e014d
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:59:32] ✅ ORDER SAVED! ID: 129, Thread ID: 19cf9311c50e014d
+========================================
+[2026-09-09 21:59:42] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 67113347KK500932S
+Store Name: PayPal
+Gmail Message ID: 19cc0a07a76d1991
+Thread ID: 19cc0a07a76d1991
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:59:42] ✅ ORDER SAVED! ID: 130, Thread ID: 19cc0a07a76d1991
+========================================
+[2026-09-09 21:59:58] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: help@epicgames.com
+Order Number: 9SS04466NG766605U
+Store Name: PayPal
+Gmail Message ID: 19c8bd08052e6704
+Thread ID: 19c8bd08052e6704
+Order Date: NULL
+Total Amount: 500
+Currency: USD
+========================================
+[2026-09-09 21:59:58] ✅ ORDER SAVED! ID: 131, Thread ID: 19c8bd08052e6704
+========================================
+[2026-09-09 21:59:59] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 655298240K4013901
+Store Name: PayPal
+Gmail Message ID: 19c8aaa5ad4f3fd5
+Thread ID: 19c8aaa5ad4f3fd5
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 21:59:59] ✅ ORDER SAVED! ID: 132, Thread ID: 19c8aaa5ad4f3fd5
+========================================
+[2026-09-09 22:00:01] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 8R9389200L5978842
+Store Name: PayPal
+Gmail Message ID: 19c81cb27ac0838a
+Thread ID: 19c81cb27ac0838a
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:00:01] ✅ ORDER SAVED! ID: 133, Thread ID: 19c81cb27ac0838a
+========================================
+[2026-09-09 22:00:04] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: info@roblox.com
+Order Number: 5V6052557H282041D
+Store Name: PayPal
+Gmail Message ID: 19c71dfeede7b891
+Thread ID: 19c71dfeede7b891
+Order Date: NULL
+Total Amount: 5250
+Currency: USD
+========================================
+[2026-09-09 22:00:04] ✅ ORDER SAVED! ID: 134, Thread ID: 19c71dfeede7b891
+========================================
+[2026-09-09 22:00:09] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 1FP50655DB519025G
+Store Name: PayPal
+Gmail Message ID: 19c00ea04462bb66
+Thread ID: 19c00ea04462bb66
+Order Date: 2026-09-09 02:05:00
+Total Amount: 2
+Currency: USD
+========================================
+[2026-09-09 22:00:09] ✅ ORDER SAVED! ID: 135, Thread ID: 19c00ea04462bb66
+========================================
+[2026-09-09 22:00:11] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 51618231MP0803712
+Store Name: PayPal
+Gmail Message ID: 19bc95a036e452c3
+Thread ID: 19bc95a036e452c3
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:00:11] ✅ ORDER SAVED! ID: 136, Thread ID: 19bc95a036e452c3
+========================================
+[2026-09-09 22:00:19] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: info@roblox.com
+Order Number: 8NN899773G984194K
+Store Name: PayPal
+Gmail Message ID: 19b8faca651ab39b
+Thread ID: 19b8faca651ab39b
+Order Date: NULL
+Total Amount: 2000
+Currency: USD
+========================================
+[2026-09-09 22:00:19] ✅ ORDER SAVED! ID: 137, Thread ID: 19b8faca651ab39b
+========================================
+[2026-09-09 22:00:20] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 1UD7377687384724B
+Store Name: PayPal
+Gmail Message ID: 19b332cc54915c25
+Thread ID: 19b332cc54915c25
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:00:20] ✅ ORDER SAVED! ID: 138, Thread ID: 19b332cc54915c25
+========================================
+[2026-09-09 22:00:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: info@roblox.com
+Order Number: 0AM04125G7332054X
+Store Name: PayPal
+Gmail Message ID: 19b2d8b3e8b86075
+Thread ID: 19b2d8a74b832e68
+Order Date: NULL
+Total Amount: 2000
+Currency: USD
+========================================
+[2026-09-09 22:00:24] ✅ ORDER SAVED! ID: 139, Thread ID: 19b2d8a74b832e68
+========================================
+[2026-09-09 22:00:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: info@roblox.com
+Order Number: 61333068ES985100M
+Store Name: PayPal
+Gmail Message ID: 19b2d8a74b832e68
+Thread ID: 19b2d8a74b832e68
+Order Date: NULL
+Total Amount: 2000
+Currency: USD
+========================================
+[2026-09-09 22:00:24] ✅ ORDER SAVED! ID: 140, Thread ID: 19b2d8a74b832e68
+========================================
+[2026-09-09 22:00:26] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 2GJ36963PX995112V
+Store Name: PayPal
+Gmail Message ID: 19b29b4fc840bb8c
+Thread ID: 19b29b4fc840bb8c
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:00:26] ✅ ORDER SAVED! ID: 141, Thread ID: 19b29b4fc840bb8c
+========================================
+[2026-09-09 22:00:32] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 5B551326HJ081812G
+Store Name: PayPal
+Gmail Message ID: 19b10723f921c4fb
+Thread ID: 19b10723f921c4fb
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:00:32] ✅ ORDER SAVED! ID: 142, Thread ID: 19b10723f921c4fb
+========================================
+[2026-09-09 22:00:34] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 4LD71244PY6062244
+Store Name: PayPal
+Gmail Message ID: 19b0cffd12ff0842
+Thread ID: 19b0cffd12ff0842
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:00:34] ✅ ORDER SAVED! ID: 143, Thread ID: 19b0cffd12ff0842
+========================================
+[2026-09-09 22:01:13] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 0YU9017703681933J
+Store Name: PayPal
+Gmail Message ID: 19ab509a514797fe
+Thread ID: 19ab509a514797fe
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:01:13] ✅ ORDER SAVED! ID: 144, Thread ID: 19ab509a514797fe
+========================================
+[2026-09-09 22:01:14] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: support@hostinger.co
+Order Number: 3KW01561XH597511R
+Store Name: PayPal
+Gmail Message ID: 19ab32dc26dc44ab
+Thread ID: 19ab32dc26dc44ab
+Order Date: NULL
+Total Amount: 35.17
+Currency: USD
+========================================
+[2026-09-09 22:01:14] ✅ ORDER SAVED! ID: 145, Thread ID: 19ab32dc26dc44ab
+========================================
+[2026-09-09 22:01:16] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: info@roblox.com
+Order Number: 47A94222W5823832U
+Store Name: PayPal
+Gmail Message ID: 19ab1fa7ec0b35f5
+Thread ID: 19ab1fa7ec0b35f5
+Order Date: NULL
+Total Amount: 2000
+Currency: USD
+========================================
+[2026-09-09 22:01:16] ✅ ORDER SAVED! ID: 146, Thread ID: 19ab1fa7ec0b35f5
+========================================
+[2026-09-09 22:01:19] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 26H42157RC013873S
+Store Name: PayPal
+Gmail Message ID: 19a8f362513918ab
+Thread ID: 19a8f362513918ab
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:01:19] ✅ ORDER SAVED! ID: 147, Thread ID: 19a8f362513918ab
+========================================
+[2026-09-09 22:01:20] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: IVORY@ivory.co.il
+Order Number: GEN-4d21a465c1
+Store Name: Ivory
+Gmail Message ID: 19a8e5a78061b9ca
+Thread ID: 19a8e5a78061b9ca
+Order Date: 2026-09-09 22:01:20
+Total Amount: 399
+Currency: ILS
+========================================
+[2026-09-09 22:01:20] ✅ ORDER SAVED! ID: 148, Thread ID: 19a8e5a78061b9ca
+========================================
+[2026-09-09 22:01:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: NULL
+Order Number: GEN-3890f55cad
+Store Name: Box
+Gmail Message ID: 19a8b72af3e32601
+Thread ID: 19a8b72af3e32601
+Order Date: 2026-09-09 22:01:24
+Total Amount: 92
+Currency: ILS
+========================================
+[2026-09-09 22:01:24] ✅ ORDER SAVED! ID: 149, Thread ID: 19a8b72af3e32601
+========================================
+[2026-09-09 22:02:09] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 94E89348GN4338827
+Store Name: PayPal
+Gmail Message ID: 19a1f85454aa2524
+Thread ID: 19a1f85454aa2524
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:09] ✅ ORDER SAVED! ID: 150, Thread ID: 19a1f85454aa2524
+========================================
+[2026-09-09 22:02:20] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 31G853485S290142U
+Store Name: PayPal
+Gmail Message ID: 199ef5a291fc949f
+Thread ID: 199ef5a291fc949f
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:20] ✅ ORDER SAVED! ID: 151, Thread ID: 199ef5a291fc949f
+========================================
+[2026-09-09 22:02:22] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 6Y620112LB5234727
+Store Name: PayPal
+Gmail Message ID: 199ded2e8c761826
+Thread ID: 199de40a83980f45
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:22] ✅ ORDER SAVED! ID: 152, Thread ID: 199de40a83980f45
+========================================
+[2026-09-09 22:02:23] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 44245137D93303543
+Store Name: PayPal
+Gmail Message ID: 199de40a83980f45
+Thread ID: 199de40a83980f45
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:23] ✅ ORDER SAVED! ID: 153, Thread ID: 199de40a83980f45
+========================================
+[2026-09-09 22:02:24] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 01J26529SU498401C
+Store Name: PayPal
+Gmail Message ID: 199d482a07344ac9
+Thread ID: 199d482a07344ac9
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:24] ✅ ORDER SAVED! ID: 154, Thread ID: 199d482a07344ac9
+========================================
+[2026-09-09 22:02:25] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@ivory.co.il
+Order Number: GEN-a526338b04
+Store Name: Ivory
+Gmail Message ID: 199d407402393fae
+Thread ID: 199d407402393fae
+Order Date: 2025-11-10 00:00:00
+Total Amount: 148
+Currency: ILS
+========================================
+[2026-09-09 22:02:25] ✅ ORDER SAVED! ID: 155, Thread ID: 199d407402393fae
+========================================
+[2026-09-09 22:02:35] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 4E653383K9020613F
+Store Name: PayPal
+Gmail Message ID: 19986491fbf2b318
+Thread ID: 19986491fbf2b318
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:35] ✅ ORDER SAVED! ID: 156, Thread ID: 19986491fbf2b318
+========================================
+[2026-09-09 22:02:36] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 72779364FN463334E
+Store Name: PayPal
+Gmail Message ID: 19981a7c8813e98c
+Thread ID: 19981a7c8813e98c
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:36] ✅ ORDER SAVED! ID: 157, Thread ID: 19981a7c8813e98c
+========================================
+[2026-09-09 22:02:43] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 1ML1562052346300E
+Store Name: PayPal
+Gmail Message ID: 1997b3d8fb9d056b
+Thread ID: 1997b3d8fb9d056b
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:43] ✅ ORDER SAVED! ID: 158, Thread ID: 1997b3d8fb9d056b
+========================================
+[2026-09-09 22:02:49] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 40B57400RE893801M
+Store Name: PayPal
+Gmail Message ID: 19954db2d780de39
+Thread ID: 19954db2d780de39
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:02:49] ✅ ORDER SAVED! ID: 159, Thread ID: 19954db2d780de39
+========================================
+[2026-09-09 22:03:08] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 3CD26004E8718691G
+Store Name: PayPal
+Gmail Message ID: 19906683de37d1ce
+Thread ID: 19906683de37d1ce
+Order Date: NULL
+Total Amount: 2
+Currency: USD
+========================================
+[2026-09-09 22:03:08] ✅ ORDER SAVED! ID: 160, Thread ID: 19906683de37d1ce
+========================================
+[2026-09-09 22:03:09] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: 8498
+Store Name: Clickpresspmg Tempsite
+Gmail Message ID: 199055e99214dea2
+Thread ID: 199055e99214dea2
+Order Date: 2026-09-09
+Total Amount: 728
+Currency: NULL
+========================================
+[2026-09-09 22:03:09] ✅ ORDER SAVED! ID: 161, Thread ID: 199055e99214dea2
+========================================
+[2026-09-09 22:03:09] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: 8498
+Store Name: Clickpresspmg Tempsite
+Gmail Message ID: 199055d54432fcea
+Thread ID: 1990532bf65969d9
+Order Date: 2026-09-09
+Total Amount: 728
+Currency: NULL
+========================================
+[2026-09-09 22:03:09] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 8498
+========================================
+[2026-09-09 22:03:10] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: maimonov@gmail.com
+Order Number: 8498
+Store Name: Clickpresspmg Tempsite
+Gmail Message ID: 1990532bf65969d9
+Thread ID: 1990532bf65969d9
+Order Date: 2026-09-09
+Total Amount: 719
+Currency: NULL
+========================================
+[2026-09-09 22:03:10] ⏭️ ORDER ALREADY EXISTS - SKIPPED: 8498
+========================================
+[2026-09-09 22:03:15] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 1P9707059F636693R
+Store Name: PayPal
+Gmail Message ID: 198f101f4e82e932
+Thread ID: 198f0fe924cb5130
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:03:15] ✅ ORDER SAVED! ID: 162, Thread ID: 198f0fe924cb5130
+========================================
+[2026-09-09 22:03:15] Order SAVE FUNCTION CALLED
+User ID: 1
+Email: service@paypal.co.il
+Order Number: 2YG83057CR9265005
+Store Name: PayPal
+Gmail Message ID: 198f0fe924cb5130
+Thread ID: 198f0fe924cb5130
+Order Date: NULL
+Total Amount: 1
+Currency: USD
+========================================
+[2026-09-09 22:03:15] ✅ ORDER SAVED! ID: 163, Thread ID: 198f0fe924cb5130

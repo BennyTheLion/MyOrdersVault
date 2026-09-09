@@ -1,0 +1,270 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f9fa;
+            direction: rtl;
+            font-family: 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white !important;
+            border-bottom: 1px solid #e9ecef;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 0.8rem 0;
+        }
+        .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e293b !important;
+        }
+        .navbar-brand i {
+            margin-left: 10px;
+            color: #3b82f6;
+        }
+        .nav-link {
+            color: #64748b !important;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            padding: 0.5rem 1rem !important;
+        }
+        .nav-link:hover {
+            color: #1e293b !important;
+            background: #f1f5f9;
+        }
+        .nav-link.active {
+            color: #3b82f6 !important;
+            background: #eff6ff;
+        }
+
+        /* Filter Card */
+        .filter-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 25px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .filter-card .form-label {
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+        }
+        .filter-card .form-control,
+        .filter-card .form-select {
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+        }
+        .filter-card .form-control:focus,
+        .filter-card .form-select:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            outline: none;
+        }
+        .btn-search {
+            background: #3b82f6;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .btn-search:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+        .btn-reset {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 10px 24px;
+            border-radius: 10px;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .btn-reset:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        /* Orders Table */
+        .orders-table {
+            background: white;
+            border-radius: 16px;
+            overflow-x: auto;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .orders-table table {
+            width: 100%;
+            min-width: 900px;
+            margin-bottom: 0;
+        }
+        .orders-table th {
+            background: #f8fafc;
+            color: #1e293b;
+            border-bottom: 1px solid #e9ecef;
+            padding: 14px 12px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .orders-table td {
+            padding: 12px;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #334155;
+        }
+        .orders-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* Store Badge */
+        .store-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+            min-width: 70px;
+            background: #64748b; /* fallback for stores without a dedicated brand color below */
+        }
+        .store-amazon { background: #FF9900; }
+        .store-aliexpress { background: #E62E2E; }
+        .store-ebay { background: #0064D2; }
+        .store-temu { background: #FF6B35; }
+        .store-paypal { background: #003087; }
+        .store-generic { background: #64748b; }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            min-width: 65px;
+        }
+        .status-confirmed { background: #dcfce7; color: #15803d; }
+        .status-pending { background: #fef3c7; color: #b45309; }
+        .status-shipped { background: #dbeafe; color: #1e40af; }
+        .status-delivered { background: #f3e8ff; color: #6b21a5; }
+
+        /* Buttons */
+        .btn-view {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 8px;
+            color: #475569;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin: 0 2px;
+        }
+        .btn-view:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+        .btn-email {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 8px;
+            color: #475569;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 2px;
+        }
+        .btn-email:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        /* Pagination */
+        .pagination {
+            margin-top: 30px;
+        }
+        .page-link {
+            color: #64748b;
+            border-radius: 10px;
+            margin: 0 3px;
+            border: 1px solid #e2e8f0;
+            padding: 8px 14px;
+            font-size: 0.8rem;
+        }
+        .page-link:hover {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #1e293b;
+        }
+        .page-item.active .page-link {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .empty-state i {
+            font-size: 3.5rem;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+        .empty-state p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid #e9ecef;
+            font-size: 0.75rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .orders-table {
+                font-size: 0.75rem;
+            }
+            .orders-table th, .orders-table td {
+                padding: 8px 6px;
+            }
+            .btn-view, .btn-email {
+                padding: 3px 8px;
+                font-size: 0.65rem;
+            }
+            .store-badge, .status-badge {
+                padding: 3px 8px;
+                font-size: 0.65rem;
+                min-width: 55px;
+            }
+        }
