@@ -1,4 +1,8 @@
 RewriteEngine On
+
+# Domain root -> application
+RewriteRule ^$ /public/ [R=302,L]
+
 RewriteBase /public/
 
 # הפניה לקבצים
