@@ -5,6 +5,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/../vendor/autoload.php';
+use MyOrdersVault\Config\Url;
+use MyOrdersVault\Core\CSRF;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Services\GmailService;
 
@@ -14,10 +16,16 @@ echo "<pre>";
 echo "=== SYNC DEBUG ===\n";
 echo "User logged in: " . (Session::has('user_id') ? "YES" : "NO") . "\n";
 
-if (!Session::has('user_id')) { 
+if (!Session::has('user_id')) {
     echo "User not logged in!\n";
-    header('Location: /public/');
-    exit; 
+    header('Location: ' . Url::base() . '/');
+    exit;
+}
+
+if (!CSRF::verifyToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? '')) {
+    http_response_code(403);
+    echo "Invalid or missing CSRF token.\n";
+    exit;
 }
 
 $userId = Session::get('user_id');
@@ -57,7 +65,3 @@ if (file_exists($lockFile)) {
 
 echo "=== END ===\n";
 echo "</pre>";
-?>
-// אחרי סנכרון - עבור לדף ההזמנות
-// header('Location: /public/orders.php');
-// exit;

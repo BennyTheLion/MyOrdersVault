@@ -4,6 +4,7 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 use MyOrdersVault\Config\Url;
+use MyOrdersVault\Core\CSRF;
 use MyOrdersVault\Models\User;
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -12,6 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $isLoggedIn = isset($_SESSION['user_id']);
 $baseUrl = Url::base();
+$csrfToken = $isLoggedIn ? CSRF::generateToken() : null;
 $userName = $_SESSION['user_name'] ?? 'אורח';
 $userEmail = $_SESSION['user_email'] ?? '';
 $userPicture = $_SESSION['user_picture'] ?? '';
@@ -136,7 +138,8 @@ if ($isLoggedIn) {
         fetch('<?= $baseUrl ?>/sync.php', {
             method: 'GET',
             headers: {
-                'X-Requested-With': 'XMLHttpRequest'
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-Token': '<?= htmlspecialchars($csrfToken ?? '', ENT_QUOTES) ?>'
             }
         })
         .then(response => {
