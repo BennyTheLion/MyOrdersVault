@@ -2,6 +2,7 @@
 namespace MyOrdersVault\Models;
 
 use MyOrdersVault\Config\Database;
+use MyOrdersVault\Core\Crypto;
 
 class User {
     private $db;
@@ -27,8 +28,8 @@ class User {
                 'name' => $googleUser['name'],
                 'email' => $googleUser['email'],
                 'picture' => $googleUser['picture'],
-                'access_token' => $googleUser['access_token'],
-                'refresh_token' => $googleUser['refresh_token'],
+                'access_token' => Crypto::encrypt($googleUser['access_token']),
+                'refresh_token' => Crypto::encrypt($googleUser['refresh_token']),
                 'token_expires_at' => $googleUser['token_expires_at'],
                 'id' => $user['id']
             ]);
@@ -43,8 +44,8 @@ class User {
                 'email' => $googleUser['email'],
                 'name' => $googleUser['name'],
                 'picture' => $googleUser['picture'],
-                'access_token' => $googleUser['access_token'],
-                'refresh_token' => $googleUser['refresh_token'],
+                'access_token' => Crypto::encrypt($googleUser['access_token']),
+                'refresh_token' => Crypto::encrypt($googleUser['refresh_token']),
                 'token_expires_at' => $googleUser['token_expires_at']
             ]);
             return $this->db->lastInsertId();
@@ -64,17 +65,22 @@ class User {
             WHERE id = :id
         ");
         return $stmt->execute([
-            'access_token' => $accessToken,
-            'refresh_token' => $refreshToken,
+            'access_token' => Crypto::encrypt($accessToken),
+            'refresh_token' => Crypto::encrypt($refreshToken),
             'token_expires_at' => $expiresAt,
             'id' => $userId
         ]);
     }
-    
+
     public function getTokens($userId) {
         $stmt = $this->db->prepare("SELECT access_token, refresh_token, token_expires_at FROM users WHERE id = :id");
         $stmt->execute(['id' => $userId]);
-        return $stmt->fetch();
+        $row = $stmt->fetch();
+        if ($row) {
+            $row['access_token'] = Crypto::decrypt($row['access_token']);
+            $row['refresh_token'] = Crypto::decrypt($row['refresh_token']);
+        }
+        return $row;
     }
 
     public function getLastSyncedAt($userId) {
