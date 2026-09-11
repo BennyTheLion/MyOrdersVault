@@ -734,7 +734,7 @@ class GmailService {
                 $this->gmailMessageModel->markProcessed($this->userId, $message->getId());
                 $processedCount++;
                 
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 // טיפול בשגיאה בהודעה בודדת - ממשיכים להודעה הבאה
                 $this->log('sync_debug', "❌ ERROR processing message {$message->getId()}: " . $e->getMessage());
                 $this->log('sync_debug', "   File: " . $e->getFile() . " Line: " . $e->getLine());
@@ -742,7 +742,7 @@ class GmailService {
                 // מסמנים כ-processed כדי לא לתקוע את הסנכרון
                 try {
                     $this->gmailMessageModel->markProcessed($this->userId, $message->getId());
-                } catch (Exception $ignore) {}
+                } catch (\Exception $ignore) {}
                 continue;
             }
             }
@@ -754,7 +754,7 @@ class GmailService {
 
         return $processedCount;
 
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         $this->log('sync_debug', "❌ FATAL ERROR in fetchOrderEmails: " . $e->getMessage());
         $this->log('sync_debug', "   File: " . $e->getFile() . " Line: " . $e->getLine());
         throw $e;

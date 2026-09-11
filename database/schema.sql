@@ -65,5 +65,5 @@ CREATE TABLE `gmail_messages` (
     `is_processed` TINYINT DEFAULT 0,
     `processed_at` DATETIME,
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
-    UNIQUE KEY uk_gmail_message_id (`gmail_message_id`)
+    UNIQUE KEY uk_user_gmail_message_id (`user_id`, `gmail_message_id`)
 ) ENGINE=InnoDB;
