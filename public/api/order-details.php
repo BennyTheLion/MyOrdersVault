@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
+use MyOrdersVault\Core\GmailLink;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
 
@@ -45,12 +46,7 @@ $html .= '<hr><h6>📧 פרטי המייל</h6><div class="row">
     </div>
     <div class="col-md-6">';
 
-$gmailUrl = null;
-if (!empty($order['thread_id'])) {
-    $gmailUrl = 'https://mail.google.com/mail/u/0/#all/' . urlencode($order['thread_id']);
-} elseif (!empty($order['gmail_message_id'])) {
-    $gmailUrl = 'https://mail.google.com/mail/u/0/#all/' . urlencode($order['gmail_message_id']);
-}
+$gmailUrl = GmailLink::build($order['order_number'], $order['thread_id'] ?? null, $order['gmail_message_id'] ?? null);
 if ($gmailUrl) {
     $html .= '<a href="' . htmlspecialchars($gmailUrl) . '" target="_blank" class="btn btn-sm btn-outline-primary">
         <i class="fas fa-envelope-open-text"></i> פתח את המייל המקורי בג׳ימייל

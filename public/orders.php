@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use MyOrdersVault\Config\Url;
+use MyOrdersVault\Core\GmailLink;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
 
@@ -138,17 +139,11 @@ require_once __DIR__ . '/includes/header.php'; ?>
                                 <button class="btn-view" onclick="viewOrder(<?php echo $order['id']; ?>)">
                                     <i class="fas fa-eye"></i> פרטים
                                 </button>
-                                <?php if (!empty($order['thread_id'])): ?>
-                                    <a href="https://mail.google.com/mail/u/0/#all/<?php echo urlencode($order['thread_id']); ?>" 
-                                       class="btn-email" 
-                                       target="_blank" 
-                                       title="צפה באימייל המקורי">
-                                        <i class="fas fa-envelope"></i> אימייל
-                                    </a>
-                                <?php elseif (!empty($order['gmail_message_id'])): ?>
-                                    <a href="https://mail.google.com/mail/u/0/#all/<?php echo $order['gmail_message_id']; ?>" 
-                                       class="btn-email" 
-                                       target="_blank" 
+                                <?php $gmailUrl = GmailLink::build($order['order_number'], $order['thread_id'] ?? null, $order['gmail_message_id'] ?? null); ?>
+                                <?php if ($gmailUrl): ?>
+                                    <a href="<?php echo htmlspecialchars($gmailUrl); ?>"
+                                       class="btn-email"
+                                       target="_blank"
                                        title="צפה באימייל המקורי">
                                         <i class="fas fa-envelope"></i> אימייל
                                     </a>
