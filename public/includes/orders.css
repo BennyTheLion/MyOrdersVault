@@ -164,6 +164,7 @@
         }
         .status-confirmed { background: #dcfce7; color: #15803d; }
         .status-pending { background: #fef3c7; color: #b45309; }
+        .status-pending_review { background: #fef3c7; color: #b45309; }
         .status-shipped { background: #dbeafe; color: #1e40af; }
         .status-delivered { background: #f3e8ff; color: #6b21a5; }
 
@@ -199,6 +200,42 @@
         .btn-email:hover {
             background: #e2e8f0;
             color: #1e293b;
+        }
+        .btn-confirm {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            padding: 5px 12px;
+            border-radius: 8px;
+            color: #15803d;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin: 0 2px;
+        }
+        .btn-confirm:hover {
+            background: #bbf7d0;
+        }
+        .btn-discard {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            padding: 5px 12px;
+            border-radius: 8px;
+            color: #b91c1c;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin: 0 2px;
+        }
+        .btn-discard:hover {
+            background: #fecaca;
+        }
+        .review-context {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            max-width: 260px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         /* Pagination */

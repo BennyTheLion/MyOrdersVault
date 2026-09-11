@@ -677,12 +677,12 @@ class GmailService {
                         $saveReason = "no_parser_high_confidence_{$confidence}";
                         $orderData = $this->buildPartialOrderData($emailData, $confidenceResult);
                     }
-                }
-
-                if (!$shouldSave) {
-                    $this->log('sync_debug', "⏭️ Confidence {$confidence}% < 70% and no parser, skipping");
-                    $this->gmailMessageModel->markProcessed($this->userId, $message->getId());
-                    continue;
+                } else {
+                    // מתחת ל-70% ובלי פארסר מוכר - לא מספיק בטוח לאישור אוטומטי,
+                    // אבל שווה להציג למשתמש לבדיקה ידנית במקום להשליך בשקט.
+                    $shouldSave = true;
+                    $saveReason = "no_parser_low_confidence_{$confidence}";
+                    $orderData = $this->buildPartialOrderData($emailData, $confidenceResult);
                 }
 
                 // בדיקה נוספת - האם יש נתונים לשמור?
@@ -727,6 +727,12 @@ class GmailService {
                 $orderData['confidence'] = $confidence;
                 $orderData['save_reason'] = $saveReason;
                 $orderData['signals'] = $confidenceResult['signals'];
+
+                // Guessed/uncertain extractions go to the review queue instead
+                // of being auto-confirmed like a matched store parser's output.
+                if (!empty($orderData['is_partial']) || !empty($orderData['low_quality'])) {
+                    $orderData['order_status'] = 'pending_review';
+                }
 
                 $messageId = $this->gmailMessageModel->save($this->userId, [
                     'gmail_message_id' => $message->getId(),

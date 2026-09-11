@@ -5,6 +5,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\CSRF;
+use MyOrdersVault\Models\Order;
 use MyOrdersVault\Models\User;
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -19,11 +20,13 @@ $userEmail = $_SESSION['user_email'] ?? '';
 $userPicture = $_SESSION['user_picture'] ?? '';
 
 $lastSyncedLabel = null;
+$pendingReviewCount = 0;
 if ($isLoggedIn) {
     $lastSyncedAt = (new User())->getLastSyncedAt($_SESSION['user_id']);
     $lastSyncedLabel = $lastSyncedAt !== null
         ? 'סונכרן לאחרונה: ' . date('d/m/Y H:i', $lastSyncedAt)
         : 'טרם בוצע סנכרון';
+    $pendingReviewCount = (new Order())->countPendingReview($_SESSION['user_id']);
 }
 ?>
 <!DOCTYPE html>
@@ -91,6 +94,14 @@ if ($isLoggedIn) {
                     <li class="nav-item">
                         <a class="nav-link" href="<?= $baseUrl ?>/orders.php">
                             <i class="fas fa-shopping-cart"></i> ההזמנות שלי
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $baseUrl ?>/review.php">
+                            <i class="fas fa-magnifying-glass"></i> ממתינות לבדיקה
+                            <?php if ($pendingReviewCount > 0): ?>
+                                <span class="badge rounded-pill bg-warning text-dark"><?= (int) $pendingReviewCount ?></span>
+                            <?php endif; ?>
                         </a>
                     </li>
                 <?php endif; ?>

@@ -74,8 +74,12 @@ class Order {
 			'currency' => $currency,
 			'order_status' => $orderStatus,
 			'raw_data' => json_encode([
-				'analysis' => $orderData['analysis'] ?? [],
-				'original_data' => $orderData['raw_data'] ?? []
+				'analysis' => [
+					'confidence' => $orderData['confidence'] ?? null,
+					'save_reason' => $orderData['save_reason'] ?? null,
+					'signals' => $orderData['signals'] ?? [],
+				],
+				'original_data' => $orderData['raw_body'] ?? $orderData['raw_data'] ?? null
 			])
 		]);
 		
@@ -121,6 +125,7 @@ class Order {
                 COUNT(DISTINCT store_name) as unique_stores
             FROM orders
             WHERE user_id = :user_id AND total_amount IS NOT NULL AND total_amount > 0
+                AND order_status != 'pending_review'
         ");
         $stmt->execute(['user_id' => $userId]);
         return $stmt->fetch();
@@ -132,6 +137,7 @@ class Order {
                    (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as items_count
             FROM orders o
             WHERE o.user_id = :user_id AND o.total_amount IS NOT NULL AND o.total_amount > 0
+                AND o.order_status != 'pending_review'
             ORDER BY o.order_date DESC, o.created_at DESC
             LIMIT :limit
         ");
@@ -145,7 +151,8 @@ class Order {
         $sql = "SELECT o.*,
                        (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as items_count
                 FROM orders o
-                WHERE o.user_id = :user_id AND o.total_amount IS NOT NULL AND o.total_amount > 0";
+                WHERE o.user_id = :user_id AND o.total_amount IS NOT NULL AND o.total_amount > 0
+                    AND o.order_status != 'pending_review'";
         $params = ['user_id' => $userId];
 
         if (!empty($filters['store'])) {
@@ -154,10 +161,13 @@ class Order {
         }
         
         if (!empty($filters['search'])) {
-            $sql .= " AND (o.order_number LIKE :search OR o.store_name LIKE :search)";
-            $params['search'] = '%' . $filters['search'] . '%';
+            // Two distinct placeholders for the same value — PDO's native
+            // prepares (emulation is off, see Database.php) reject a named
+            // parameter used twice in one query.
+            $sql .= " AND (o.order_number LIKE :search1 OR o.store_name LIKE :search2)";
+            $params['search1'] = $params['search2'] = '%' . $filters['search'] . '%';
         }
-        
+
         if (!empty($filters['date_from'])) {
             $sql .= " AND o.order_date >= :date_from";
             $params['date_from'] = $filters['date_from'];
@@ -186,7 +196,9 @@ class Order {
     }
     
     public function countAll($userId, $filters = []) {
-        $sql = "SELECT COUNT(*) as total FROM orders o WHERE o.user_id = :user_id AND o.total_amount IS NOT NULL AND o.total_amount > 0";
+        $sql = "SELECT COUNT(*) as total FROM orders o
+                WHERE o.user_id = :user_id AND o.total_amount IS NOT NULL AND o.total_amount > 0
+                    AND o.order_status != 'pending_review'";
         $params = ['user_id' => $userId];
         
         if (!empty($filters['store'])) {
@@ -195,10 +207,10 @@ class Order {
         }
         
         if (!empty($filters['search'])) {
-            $sql .= " AND (o.order_number LIKE :search OR o.store_name LIKE :search)";
-            $params['search'] = '%' . $filters['search'] . '%';
+            $sql .= " AND (o.order_number LIKE :search1 OR o.store_name LIKE :search2)";
+            $params['search1'] = $params['search2'] = '%' . $filters['search'] . '%';
         }
-        
+
         $stmt = $this->db->prepare($sql);
         $stmt->execute($params);
         return $stmt->fetch()['total'];
@@ -225,9 +237,58 @@ class Order {
         $stmt = $this->db->prepare("
             SELECT DISTINCT store_name FROM orders
             WHERE user_id = :user_id AND total_amount IS NOT NULL AND total_amount > 0
+                AND order_status != 'pending_review'
             ORDER BY store_name
         ");
         $stmt->execute(['user_id' => $userId]);
         return $stmt->fetchAll();
+    }
+
+    public function getPendingReview($userId) {
+        $stmt = $this->db->prepare("
+            SELECT o.* FROM orders o
+            WHERE o.user_id = :user_id AND o.order_status = 'pending_review'
+            ORDER BY o.created_at DESC
+        ");
+        $stmt->execute(['user_id' => $userId]);
+        return $stmt->fetchAll();
+    }
+
+    public function countPendingReview($userId) {
+        $stmt = $this->db->prepare("
+            SELECT COUNT(*) as total FROM orders
+            WHERE user_id = :user_id AND order_status = 'pending_review'
+        ");
+        $stmt->execute(['user_id' => $userId]);
+        return (int) $stmt->fetch()['total'];
+    }
+
+    // Applies the user's corrections and flips the order to confirmed, but
+    // only if it's still pending_review — prevents a stale review-page tab
+    // from re-confirming (or resurrecting) an order someone already acted on.
+    public function confirmReview($orderId, $userId, array $fields) {
+        $stmt = $this->db->prepare("
+            UPDATE orders
+            SET store_name = :store_name, order_number = :order_number,
+                total_amount = :total_amount, currency = :currency, order_status = 'confirmed'
+            WHERE id = :id AND user_id = :user_id AND order_status = 'pending_review'
+        ");
+        $stmt->execute([
+            'store_name' => $fields['store_name'],
+            'order_number' => $fields['order_number'],
+            'total_amount' => $fields['total_amount'],
+            'currency' => $fields['currency'],
+            'id' => $orderId,
+            'user_id' => $userId,
+        ]);
+        return $stmt->rowCount() > 0;
+    }
+
+    public function discardReview($orderId, $userId) {
+        $stmt = $this->db->prepare("
+            DELETE FROM orders WHERE id = :id AND user_id = :user_id AND order_status = 'pending_review'
+        ");
+        $stmt->execute(['id' => $orderId, 'user_id' => $userId]);
+        return $stmt->rowCount() > 0;
     }
 }
