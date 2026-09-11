@@ -76,4 +76,19 @@ class User {
         $stmt->execute(['id' => $userId]);
         return $stmt->fetch();
     }
+
+    public function getLastSyncedAt($userId) {
+        $stmt = $this->db->prepare("SELECT last_synced_at FROM users WHERE id = :id");
+        $stmt->execute(['id' => $userId]);
+        $row = $stmt->fetch();
+        return $row && $row['last_synced_at'] !== null ? (int) $row['last_synced_at'] : null;
+    }
+
+    public function updateLastSyncedAt($userId, $timestamp) {
+        $stmt = $this->db->prepare("UPDATE users SET last_synced_at = :last_synced_at WHERE id = :id");
+        return $stmt->execute([
+            'last_synced_at' => $timestamp,
+            'id' => $userId
+        ]);
+    }
 }

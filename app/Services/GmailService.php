@@ -4,7 +4,7 @@ namespace MyOrdersVault\Services;
 use MyOrdersVault\Parsers\OrderParserFactory;
 
 class GmailService {
-    
+
     private $client;
     private $gmail;
     private $userModel;
@@ -15,18 +15,23 @@ class GmailService {
         $this->userId = $userId;
         $this->userModel = new \MyOrdersVault\Models\User();
         $this->gmailMessageModel = new \MyOrdersVault\Models\GmailMessage();
-        
-        $config = require __DIR__ . '/../../../config/config.php';
+
         $userTokens = $this->userModel->getTokens($userId);
-        
+
         if (!$userTokens) {
             throw new \Exception('User tokens not found');
         }
-        
+
+        $configPath = __DIR__ . '/../../../config/config.php';
+        if (!file_exists($configPath)) {
+            $configPath = __DIR__ . '/../../config/config.php';
+        }
+        $config = require $configPath;
+
         $this->client = new \Google\Client();
         $this->client->setClientId($config['google']['client_id']);
         $this->client->setClientSecret($config['google']['client_secret']);
-        
+
         if (strtotime($userTokens['token_expires_at']) < time()) {
             $auth = new \MyOrdersVault\Services\GoogleAuth();
             $newTokens = $auth->refreshToken($userTokens['refresh_token']);
@@ -40,7 +45,7 @@ class GmailService {
         } else {
             $this->client->setAccessToken($userTokens['access_token']);
         }
-        
+
         $this->gmail = new \Google\Service\Gmail($this->client);
     }
 
@@ -48,7 +53,7 @@ class GmailService {
     // LAYER 1 — GMAIL QUERY BUILDER
     // ─────────────────────────────────────────────
 
-    private function buildSearchQuery(): string
+    private function buildSearchQuery(?int $afterTimestamp = null): string
     {
         // --- English order/invoice keywords ---
         $englishSubjectKeywords = [
@@ -107,7 +112,16 @@ class GmailService {
         $subjectQuery = '(' . implode(' OR ', $subjectParts) . ')';
         $senderQuery  = '(' . $senderParts . ')';
 
-        return "({$subjectQuery} OR {$senderQuery})";
+        $query = "({$subjectQuery} OR {$senderQuery})";
+
+        // Incremental sync — only ask Gmail for messages received since the
+        // last successful sync, instead of re-scanning the whole mailbox
+        // every time (that's what made syncing slow).
+        if ($afterTimestamp !== null) {
+            $query .= " after:{$afterTimestamp}";
+        }
+
+        return $query;
     }
 
     // ─────────────────────────────────────────────
@@ -290,12 +304,12 @@ class GmailService {
         if (empty($orderNumber)) {
             return ['is_valid' => false, 'cleaned' => null, 'type' => 'none', 'reason' => 'No order number provided'];
         }
-        
+
         $original = $orderNumber;
         $cleaned = trim($orderNumber);
         $cleaned = preg_replace('/^(order|inv|ord|ref|#|no\.?|num\.?|number:?)\s*/i', '', $cleaned);
         $cleaned = preg_replace('/^(הזמנה|חשבונית|אסמכתא|מס\'?)\s*/ui', '', $cleaned);
-        
+
         $patterns = [
             'amazon' => '/^[0-9]{3}-[0-9]{7}-[0-9]{7}$/',
             'paypal' => '/^[A-Z0-9]{17}$/',
@@ -304,17 +318,17 @@ class GmailService {
             'alphanumeric' => '/^[A-Z0-9\-]{6,25}$/i',
             'short_digits' => '/^\d{4,5}$/',
         ];
-        
+
         foreach ($patterns as $type => $pattern) {
             if (preg_match($pattern, $cleaned)) {
                 return ['is_valid' => true, 'cleaned' => $cleaned, 'type' => $type, 'original' => $original, 'reason' => "Matches {$type} format"];
             }
         }
-        
+
         if (strlen($cleaned) >= 6) {
             return ['is_valid' => true, 'cleaned' => $cleaned, 'type' => 'unknown', 'original' => $original, 'reason' => 'Weak validation - length >= 6'];
         }
-        
+
         return ['is_valid' => false, 'cleaned' => $cleaned, 'type' => 'invalid', 'original' => $original, 'reason' => 'Does not match any known pattern and length < 6'];
     }
 
@@ -333,14 +347,14 @@ class GmailService {
             '/account[:\s]+([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i',
             '/to[:\s]+([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/i',
         ];
-        
+
         $foundEmails = [];
-        
+
         foreach ($patterns as $pattern) {
             if (preg_match_all($pattern, $body, $matches)) {
                 foreach ($matches[1] as $email) {
                     // בדוק שזה לא מייל של noreply
-                    if (stripos($email, 'noreply') === false && 
+                    if (stripos($email, 'noreply') === false &&
                         stripos($email, 'no-reply') === false &&
                         stripos($email, 'donotreply') === false) {
                         $foundEmails[] = $email;
@@ -348,15 +362,15 @@ class GmailService {
                 }
             }
         }
-        
+
         // הסר כפילויות
         $foundEmails = array_unique($foundEmails);
-        
+
         // אם יש מיילים, החזר את הראשון (הכי סביר)
         if (!empty($foundEmails)) {
             return $foundEmails[0];
         }
-        
+
         return null;
     }
 
@@ -549,13 +563,21 @@ class GmailService {
     public function fetchOrderEmails(int $maxResults = 100, int $maxPages = 50): int
 {
     try {
-        $query = $this->buildSearchQuery();
+        // Overlap the new window slightly with the previous one (instead of
+        // starting exactly where it left off) so a message that arrived in
+        // the last few seconds of the prior sync can't be missed; the
+        // isProcessed()/unique-key checks make re-seeing it harmless.
+        $lastSyncedAt = $this->userModel->getLastSyncedAt($this->userId);
+        $syncStartedAt = time();
+        $afterTimestamp = $lastSyncedAt !== null ? max(0, $lastSyncedAt - 300) : null;
+
+        $query = $this->buildSearchQuery($afterTimestamp);
         $processedCount = 0;
         $pageToken = null;
         $page = 0;
         $totalSeen = 0;
 
-        $this->log('sync_debug', "[" . date('Y-m-d H:i:s') . "] ===== START SYNC =====\nQuery: {$query}\n");
+        $this->log('sync_debug', "[" . date('Y-m-d H:i:s') . "] ===== START SYNC (since " . ($afterTimestamp !== null ? date('Y-m-d H:i:s', $afterTimestamp) : 'beginning') . ") =====\nQuery: {$query}\n");
 
         do {
             $page++;
@@ -672,17 +694,17 @@ class GmailService {
 
                 // לוג שהזמנה עומדת להישמר
                 $this->log('sync_debug', "✅ WILL SAVE: {$emailData['subject']} - Confidence: {$confidence}%");
-                
+
                 // Validate order number if exists
                 if (!empty($orderData['order_number'])) {
                     $orderNumberValidation = $this->validateOrderNumber($orderData['order_number']);
                     $orderData['order_number_validation'] = $orderNumberValidation;
-                    
+
                     if (!$orderNumberValidation['is_valid'] && $confidence < 85) {
                         $this->log('sync_debug', "⚠️ Invalid order number: {$orderData['order_number']} - {$orderNumberValidation['reason']}");
                         $orderData['low_quality'] = true;
                     }
-                    
+
                     if ($orderNumberValidation['is_valid'] && $orderNumberValidation['cleaned']) {
                         $orderData['order_number_cleaned'] = $orderNumberValidation['cleaned'];
                         $this->log('sync_debug', "✅ Cleaned order number: {$orderNumberValidation['cleaned']} ({$orderNumberValidation['type']})");
@@ -733,12 +755,12 @@ class GmailService {
 
                 $this->gmailMessageModel->markProcessed($this->userId, $message->getId());
                 $processedCount++;
-                
+
             } catch (\Exception $e) {
                 // טיפול בשגיאה בהודעה בודדת - ממשיכים להודעה הבאה
                 $this->log('sync_debug', "❌ ERROR processing message {$message->getId()}: " . $e->getMessage());
                 $this->log('sync_debug', "   File: " . $e->getFile() . " Line: " . $e->getLine());
-                
+
                 // מסמנים כ-processed כדי לא לתקוע את הסנכרון
                 try {
                     $this->gmailMessageModel->markProcessed($this->userId, $message->getId());
@@ -751,6 +773,11 @@ class GmailService {
         } while ($pageToken && $page < $maxPages);
 
         $this->log('sync_debug', "===== END SYNC. Pages: {$page}, Messages seen: {$totalSeen}, Saved: {$processedCount} =====\n");
+
+        // Record when this sync started (not finished) so the next run's
+        // overlap window is relative to it — avoids a gap for messages that
+        // arrived while this sync was still running.
+        $this->userModel->updateLastSyncedAt($this->userId, $syncStartedAt);
 
         return $processedCount;
 

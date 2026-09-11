@@ -1,5 +1,8 @@
 <?php
+
 require_once __DIR__ . '/../../vendor/autoload.php';
+
+use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Services\GoogleAuth;
 
@@ -23,5 +26,5 @@ try {
 	} catch (Exception $e) {
 		Session::setFlash('error', 'שגיאה: ' . $e->getMessage());
 	}
-header('Location: /public/');
+header('Location: ' . Url::base() . '/');
 exit;

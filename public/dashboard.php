@@ -1,11 +1,13 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
+
+use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
 
 Session::start();
 if (!Session::has('user_id')) { 
-    header('Location: /public/');
+    header('Location: ' . Url::base() . '/');
     exit; 
 }
 
@@ -212,7 +214,7 @@ $recentOrders = $orderModel->getRecentOrders($userId, 10);
                         <td colspan="5" class="text-center py-5">
                             <i class="fas fa-inbox fa-3x mb-3 d-block text-muted"></i>
                             <p>אין הזמנות להצגה</p>
-                            <a href="/public/sync.php" class="btn btn-primary btn-sm">
+                              <a href="<?= Url::base() ?>/sync.php" class="btn btn-primary btn-sm">
                                 <i class="fas fa-sync-alt"></i> סנכרן עכשיו
                             </a>
                         </td>
@@ -237,7 +239,7 @@ $recentOrders = $orderModel->getRecentOrders($userId, 10);
         </div>
         
         <div class="text-center mt-4">
-            <a href="/public/orders.php" class="btn btn-primary">
+            <a href="<?= Url::base() ?>/orders.php" class="btn btn-primary">
                 <i class="fas fa-arrow-left"></i> צפה בכל ההזמנות
             </a>
         </div>

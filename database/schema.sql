@@ -14,6 +14,7 @@ CREATE TABLE `users` (
     `access_token` TEXT,
     `refresh_token` TEXT,
     `token_expires_at` DATETIME,
+    `last_synced_at` INT UNSIGNED NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;

@@ -2,7 +2,6 @@
 namespace MyOrdersVault\Config;
 
 
-
 use PDO;
 use PDOException;
 
@@ -11,7 +10,14 @@ class Database {
     private $connection;
     
     private function __construct() {
-        $config = require __DIR__ . '/../../../config/config.php';
+
+ 	$configPath = __DIR__ . '/../../../config/config.php';
+
+        if (!file_exists($configPath)) {
+            $configPath = __DIR__ . '/../../config/config.php';
+        }
+
+        $config = require $configPath;
         $db = $config['database'];
         
         try {

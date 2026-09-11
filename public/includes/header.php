@@ -1,13 +1,28 @@
 <?php
 // header.php - Minimalist Gray Elegant Theme
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use MyOrdersVault\Config\Url;
+use MyOrdersVault\Models\User;
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 $isLoggedIn = isset($_SESSION['user_id']);
+$baseUrl = Url::base();
 $userName = $_SESSION['user_name'] ?? 'אורח';
 $userEmail = $_SESSION['user_email'] ?? '';
 $userPicture = $_SESSION['user_picture'] ?? '';
+
+$lastSyncedLabel = null;
+if ($isLoggedIn) {
+    $lastSyncedAt = (new User())->getLastSyncedAt($_SESSION['user_id']);
+    $lastSyncedLabel = $lastSyncedAt !== null
+        ? 'סונכרן לאחרונה: ' . date('d/m/Y H:i', $lastSyncedAt)
+        : 'טרם בוצע סנכרון';
+}
 ?>
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -57,7 +72,7 @@ $userPicture = $_SESSION['user_picture'] ?? '';
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="/public/">
+        <a class="navbar-brand" href="<?= $baseUrl ?>/">
             <i class="fas fa-box"></i> My Orders Vault
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -67,12 +82,12 @@ $userPicture = $_SESSION['user_picture'] ?? '';
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <?php if ($isLoggedIn): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/public/dashboard.php">
+                        <a class="nav-link" href="<?= $baseUrl ?>/dashboard.php">
                             <i class="fas fa-chart-line"></i> לוח בקרה
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/public/orders.php">
+                        <a class="nav-link" href="<?= $baseUrl ?>/orders.php">
                             <i class="fas fa-shopping-cart"></i> ההזמנות שלי
                         </a>
                     </li>
@@ -87,15 +102,15 @@ $userPicture = $_SESSION['user_picture'] ?? '';
                             <i class="fas fa-user-circle fa-2x" style="color: var(--gray-400);"></i>
                         <?php endif; ?>
                         <span class="user-name"><?php echo htmlspecialchars($userName); ?></span>
-                        <button id="syncNavButton" onclick="startGlobalSync()" class="btn-sync-nav">
+                        <button id="syncNavButton" onclick="startGlobalSync()" class="btn-sync-nav" title="<?php echo htmlspecialchars($lastSyncedLabel); ?>">
                             <i class="fas fa-sync-alt"></i> <span>סנכרן</span>
                         </button>
-                        <a href="/public/logout.php" class="btn-logout">
+                        <a href="<?= $baseUrl ?>/logout.php" class="btn-logout">
                             <i class="fas fa-sign-out-alt"></i> <span>התנתק</span>
                         </a>
                     </div>
                 <?php else: ?>
-                    <a href="/public/auth/google.php" class="btn-google">
+                    <a href="<?= $baseUrl ?>/auth/google.php" class="btn-google">
                         <i class="fab fa-google"></i> התחבר עם Google
                     </a>
                 <?php endif; ?>
@@ -118,14 +133,14 @@ $userPicture = $_SESSION['user_picture'] ?? '';
             syncBtn.innerHTML = '<div class="spinner" style="width:14px;height:14px;"></div> <span>מסנכרן...</span>';
         }
         
-        fetch('/public/sync.php', {
+        fetch('<?= $baseUrl ?>/sync.php', {
             method: 'GET',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
             }
         })
         .then(response => {
-            window.location.href = '/public/orders.php';
+            window.location.href = '<?= $baseUrl ?>/orders.php';
         })
         .catch(error => {
             console.error('Sync error:', error);

@@ -1,11 +1,13 @@
 ﻿<?php
 require_once __DIR__ . '/../vendor/autoload.php';
+
+use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
 
 Session::start();
 if (!Session::has('user_id')) { 
-    header('Location: /public/'); 
+    header('Location: ' . Url::base() . '/');
     exit; 
 }
 
@@ -75,7 +77,7 @@ require_once __DIR__ . '/includes/header.php'; ?>
                 <button type="submit" class="btn-search">
                     <i class="fas fa-search"></i> חפש
                 </button>
-                <a href="/public/orders.php" class="btn-reset">
+                <a href="<?= Url::base() ?>/orders.php" class="btn-reset">
                     <i class="fas fa-undo"></i> נקה
                 </a>
             </div>
@@ -216,7 +218,7 @@ require_once __DIR__ . '/includes/header.php'; ?>
         modal.show();
         
         try {
-            const response = await fetch(`/public/api/order-details.php?id=${orderId}`);
+            const response = await fetch(`<?= Url::base() ?>/api/order-details.php?id=${orderId}`);
             const data = await response.json();
             
             if (data.success) {
