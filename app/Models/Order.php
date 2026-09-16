@@ -327,6 +327,23 @@ class Order {
         ]);
     }
 
+    // Used by "full sync" (public/sync.php): wipes the user's orders so they
+    // get rebuilt from scratch by a fresh mailbox scan, EXCEPT any order that
+    // has a user-submitted correction on it (order_corrections cascades on
+    // delete) — otherwise a full sync would silently discard the dispute
+    // history and resurrect the order with its original, disputed amount.
+    // Order::save()'s existing store_name+order_number check then just skips
+    // re-inserting the protected orders when the rescan reaches them again.
+    public function deleteAllExceptCorrected($userId) {
+        $stmt = $this->db->prepare("
+            DELETE FROM orders
+            WHERE user_id = :user_id
+                AND id NOT IN (SELECT order_id FROM order_corrections WHERE user_id = :user_id2)
+        ");
+        $stmt->execute(['user_id' => $userId, 'user_id2' => $userId]);
+        return $stmt->rowCount();
+    }
+
     public function discardReview($orderId, $userId) {
         $stmt = $this->db->prepare("
             DELETE FROM orders WHERE id = :id AND user_id = :user_id AND order_status = 'pending_review'

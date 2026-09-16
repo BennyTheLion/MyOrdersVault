@@ -8,6 +8,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\CSRF;
 use MyOrdersVault\Core\Session;
+use MyOrdersVault\Models\GmailMessage;
+use MyOrdersVault\Models\Order;
 use MyOrdersVault\Services\GmailService;
 
 Session::start();
@@ -31,26 +33,39 @@ if (!CSRF::verifyToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? '')) {
 $userId = Session::get('user_id');
 echo "User ID: {$userId}\n";
 
+$isFullSync = ($_GET['full'] ?? '') === '1';
+
 $startTime = microtime(true);
 $lockFile = __DIR__ . '/../storage/sync_active.lock';
 
 try {
     echo "Creating lock file...\n";
     file_put_contents($lockFile, time());
-    
+
+    if ($isFullSync) {
+        echo "FULL SYNC: wiping non-disputed orders and resetting message markers...\n";
+        $orderModel = new Order();
+        $deletedCount = $orderModel->deleteAllExceptCorrected($userId);
+        (new GmailMessage())->resetProcessed($userId);
+        echo "Deleted {$deletedCount} orders (orders with an open correction were kept as-is).\n";
+    }
+
     echo "Creating GmailService...\n";
     $gmailService = new GmailService($userId);
-    
+
     echo "Calling fetchOrderEmails...\n";
-    $processedCount = $gmailService->fetchOrderEmails(100);
-    
+    $processedCount = $gmailService->fetchOrderEmails(100, 50, $isFullSync);
+
     $endTime = microtime(true);
     $duration = round($endTime - $startTime, 2);
-    
+
     echo "SUCCESS! Processed: {$processedCount} orders in {$duration} seconds\n";
-    
-    Session::setFlash('success', "✅ סנכרן בהצלחה! נמצאו ועובדו {$processedCount} הזמנות חדשות. ({$duration} שניות)");
-    
+
+    $successMessage = $isFullSync
+        ? "✅ הסנכרון המלא הושלם! נמצאו ועובדו {$processedCount} הזמנות. ({$duration} שניות)"
+        : "✅ סנכרן בהצלחה! נמצאו ועובדו {$processedCount} הזמנות חדשות. ({$duration} שניות)";
+    Session::setFlash('success', $successMessage);
+
 } catch (Exception $e) {
     echo "ERROR: " . $e->getMessage() . "\n";
     echo "File: " . $e->getFile() . "\n";

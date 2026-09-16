@@ -560,14 +560,17 @@ class GmailService {
     // MAIN FETCH METHOD
     // ─────────────────────────────────────────────
 
-    public function fetchOrderEmails(int $maxResults = 100, int $maxPages = 50): int
+    public function fetchOrderEmails(int $maxResults = 100, int $maxPages = 50, bool $fullSync = false): int
 {
     try {
         // Overlap the new window slightly with the previous one (instead of
         // starting exactly where it left off) so a message that arrived in
         // the last few seconds of the prior sync can't be missed; the
         // isProcessed()/unique-key checks make re-seeing it harmless.
-        $lastSyncedAt = $this->userModel->getLastSyncedAt($this->userId);
+        // A full sync ignores last_synced_at entirely and rescans the whole
+        // mailbox — see public/sync.php, which also resets is_processed and
+        // wipes (non-disputed) orders before calling this.
+        $lastSyncedAt = $fullSync ? null : $this->userModel->getLastSyncedAt($this->userId);
         $syncStartedAt = time();
         $afterTimestamp = $lastSyncedAt !== null ? max(0, $lastSyncedAt - 300) : null;
 

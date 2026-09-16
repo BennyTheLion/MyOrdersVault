@@ -52,6 +52,18 @@ class GmailMessage {
         return $this->db->lastInsertId();
     }
     
+    // Used by "full sync" (public/sync.php): clears the "already seen" marker
+    // for every message of this user so the mailbox gets rescanned from
+    // scratch instead of skipping everything via isProcessed(). Orders whose
+    // email gets re-seen this way are still protected from being overwritten
+    // by Order::save()'s existing store_name+order_number check.
+    public function resetProcessed($userId) {
+        $stmt = $this->db->prepare("
+            UPDATE gmail_messages SET is_processed = 0, processed_at = NULL WHERE user_id = :user_id
+        ");
+        return $stmt->execute(['user_id' => $userId]);
+    }
+
     public function markProcessed($userId, $gmailMessageId) {
         // upsert - a skipped message (low confidence / no parser) never went
         // through save(), so there may be no row yet to UPDATE. Without this,

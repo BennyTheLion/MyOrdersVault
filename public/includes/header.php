@@ -166,9 +166,19 @@ if ($isLoggedIn) {
                                 <option value="<?= $code ?>" <?= $preferredCurrency === $code ? 'selected' : '' ?>><?= $label ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <button id="syncNavButton" onclick="startGlobalSync()" class="btn-sync-nav" title="<?php echo htmlspecialchars($lastSyncedLabel); ?>">
-                            <i class="fas fa-sync-alt"></i> <span>סנכרן</span>
-                        </button>
+                        <div class="btn-group">
+                            <button id="syncNavButton" onclick="startGlobalSync(false)" class="btn-sync-nav" title="<?php echo htmlspecialchars($lastSyncedLabel); ?>">
+                                <i class="fas fa-sync-alt"></i> <span>סנכרן</span>
+                            </button>
+                            <button type="button" class="btn-sync-nav dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="flex: 0 0 auto; padding-left: 6px; padding-right: 6px;" title="אפשרויות סנכרון נוספות">
+                                <span class="visually-hidden">אפשרויות סנכרון</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#" onclick="startFullSync(); return false;">
+                                    <i class="fas fa-database"></i> סנכרון מלא (בונה מחדש את כל ההזמנות)
+                                </a></li>
+                            </ul>
+                        </div>
                         <a href="<?= $baseUrl ?>/logout.php" class="btn-logout">
                             <i class="fas fa-sign-out-alt"></i> <span>התנתק</span>
                         </a>
@@ -186,18 +196,27 @@ if ($isLoggedIn) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // פונקציה גלובלית להתחלת סנכרון
-    function startGlobalSync() {
+    function startGlobalSync(full) {
         const indicator = document.getElementById('syncGlobalIndicator');
         const syncBtn = document.getElementById('syncNavButton');
-        
-        if (indicator) indicator.style.display = 'flex';
-        
+
+        if (indicator) {
+            indicator.style.display = 'flex';
+            const label = indicator.querySelector('span');
+            if (label) {
+                label.textContent = full
+                    ? '🔄 מבצע סנכרון מלא... זה עשוי לקחת כמה דקות'
+                    : '🔄 מסנכרן הזמנות...';
+            }
+        }
+
         if (syncBtn) {
             syncBtn.disabled = true;
             syncBtn.innerHTML = '<div class="spinner" style="width:14px;height:14px;"></div> <span>מסנכרן...</span>';
         }
-        
-        fetch('<?= $baseUrl ?>/sync.php', {
+
+        const url = '<?= $baseUrl ?>/sync.php' + (full ? '?full=1' : '');
+        fetch(url, {
             method: 'GET',
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
@@ -216,6 +235,20 @@ if ($isLoggedIn) {
             }
             alert('אירעה שגיאה בסנכרון');
         });
+    }
+
+    function startFullSync() {
+        const confirmed = confirm(
+            'סנכרון מלא סורק מחדש את כל תיבת הדואר שלך (לא רק הודעות חדשות), ' +
+            'ולכן עשוי לקחת כמה דקות במקום כמה שניות.\n\n' +
+            'כל ההזמנות הקיימות שלך יימחקו וייבנו מחדש מהמיילים המקוריים — ' +
+            'למעט הזמנות שיש להן מחלוקת פתוחה (תיקון סכום שביצעת): ' +
+            'הזמנות אלו יישארו בדיוק כפי שתיקנת אותן, ולא יימחקו ולא יידרסו.\n\n' +
+            'להמשיך בסנכרון מלא?'
+        );
+        if (confirmed) {
+            startGlobalSync(true);
+        }
     }
     
     function setPreferredCurrency(currency) {
