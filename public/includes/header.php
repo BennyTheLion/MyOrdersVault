@@ -173,10 +173,22 @@ if ($isLoggedIn) {
                             <button type="button" class="btn-sync-nav dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="flex: 0 0 auto; padding-left: 6px; padding-right: 6px;" title="אפשרויות סנכרון נוספות">
                                 <span class="visually-hidden">אפשרויות סנכרון</span>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <ul class="dropdown-menu dropdown-menu-end" style="min-width: 260px;">
                                 <li><a class="dropdown-item" href="#" onclick="startFullSync(); return false;">
                                     <i class="fas fa-database"></i> סנכרון מלא (בונה מחדש את כל ההזמנות)
                                 </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="px-3 py-1" onclick="event.stopPropagation();">
+                                    <label for="syncSinceDate" class="form-label" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">
+                                        <i class="fas fa-calendar-day"></i> סנכרון מתאריך התחלה
+                                    </label>
+                                    <div class="d-flex gap-1">
+                                        <input type="date" id="syncSinceDate" class="form-control form-control-sm" style="font-size: 0.82rem;" onclick="event.stopPropagation();">
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="startDateSync(); return false;">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                         <a href="<?= $baseUrl ?>/logout.php" class="btn-logout">
@@ -196,7 +208,7 @@ if ($isLoggedIn) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // פונקציה גלובלית להתחלת סנכרון
-    function startGlobalSync(full) {
+    function startGlobalSync(full, sinceDate) {
         const indicator = document.getElementById('syncGlobalIndicator');
         const syncBtn = document.getElementById('syncNavButton');
 
@@ -206,7 +218,7 @@ if ($isLoggedIn) {
             if (label) {
                 label.textContent = full
                     ? '🔄 מבצע סנכרון מלא... זה עשוי לקחת כמה דקות'
-                    : '🔄 מסנכרן הזמנות...';
+                    : (sinceDate ? '🔄 מסנכרן מתאריך ' + sinceDate + '...' : '🔄 מסנכרן הזמנות...');
             }
         }
 
@@ -215,7 +227,12 @@ if ($isLoggedIn) {
             syncBtn.innerHTML = '<div class="spinner" style="width:14px;height:14px;"></div> <span>מסנכרן...</span>';
         }
 
-        const url = '<?= $baseUrl ?>/sync.php' + (full ? '?full=1' : '');
+        let url = '<?= $baseUrl ?>/sync.php';
+        if (full) {
+            url += '?full=1';
+        } else if (sinceDate) {
+            url += '?since=' + encodeURIComponent(sinceDate);
+        }
         fetch(url, {
             method: 'GET',
             headers: {
@@ -249,6 +266,21 @@ if ($isLoggedIn) {
         if (confirmed) {
             startGlobalSync(true);
         }
+    }
+
+    function startDateSync() {
+        const input = document.getElementById('syncSinceDate');
+        const sinceDate = input ? input.value : '';
+        if (!sinceDate) {
+            alert('נא לבחור תאריך התחלה.');
+            return;
+        }
+        const today = new Date().toISOString().slice(0, 10);
+        if (sinceDate > today) {
+            alert('לא ניתן לבחור תאריך עתידי.');
+            return;
+        }
+        startGlobalSync(false, sinceDate);
     }
     
     function setPreferredCurrency(currency) {

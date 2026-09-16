@@ -560,7 +560,7 @@ class GmailService {
     // MAIN FETCH METHOD
     // ─────────────────────────────────────────────
 
-    public function fetchOrderEmails(int $maxResults = 100, int $maxPages = 50, bool $fullSync = false): int
+    public function fetchOrderEmails(int $maxResults = 100, int $maxPages = 50, bool $fullSync = false, ?int $sinceTimestamp = null): int
 {
     try {
         // Overlap the new window slightly with the previous one (instead of
@@ -569,10 +569,19 @@ class GmailService {
         // isProcessed()/unique-key checks make re-seeing it harmless.
         // A full sync ignores last_synced_at entirely and rescans the whole
         // mailbox — see public/sync.php, which also resets is_processed and
-        // wipes (non-disputed) orders before calling this.
-        $lastSyncedAt = $fullSync ? null : $this->userModel->getLastSyncedAt($this->userId);
+        // wipes (non-disputed) orders before calling this. $sinceTimestamp
+        // (user-picked start date) takes priority over both: unlike full
+        // sync it doesn't wipe anything first — Order::save()'s existing
+        // store_name+order_number check already skips orders it re-finds,
+        // so it's just a targeted incremental catch-up from an arbitrary
+        // past date instead of from last_synced_at.
+        if ($sinceTimestamp !== null) {
+            $afterTimestamp = $sinceTimestamp;
+        } else {
+            $lastSyncedAt = $fullSync ? null : $this->userModel->getLastSyncedAt($this->userId);
+            $afterTimestamp = $lastSyncedAt !== null ? max(0, $lastSyncedAt - 300) : null;
+        }
         $syncStartedAt = time();
-        $afterTimestamp = $lastSyncedAt !== null ? max(0, $lastSyncedAt - 300) : null;
 
         $query = $this->buildSearchQuery($afterTimestamp);
         $processedCount = 0;

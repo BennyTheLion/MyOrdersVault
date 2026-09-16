@@ -35,6 +35,17 @@ echo "User ID: {$userId}\n";
 
 $isFullSync = ($_GET['full'] ?? '') === '1';
 
+$sinceTimestamp = null;
+if (!$isFullSync && !empty($_GET['since'])) {
+    $sinceDate = $_GET['since'];
+    if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $sinceDate)) {
+        $parsed = strtotime($sinceDate . ' 00:00:00');
+        if ($parsed !== false && $parsed <= time()) {
+            $sinceTimestamp = $parsed;
+        }
+    }
+}
+
 $startTime = microtime(true);
 $lockFile = __DIR__ . '/../storage/sync_active.lock';
 
@@ -54,16 +65,20 @@ try {
     $gmailService = new GmailService($userId);
 
     echo "Calling fetchOrderEmails...\n";
-    $processedCount = $gmailService->fetchOrderEmails(100, 50, $isFullSync);
+    $processedCount = $gmailService->fetchOrderEmails(100, 50, $isFullSync, $sinceTimestamp);
 
     $endTime = microtime(true);
     $duration = round($endTime - $startTime, 2);
 
     echo "SUCCESS! Processed: {$processedCount} orders in {$duration} seconds\n";
 
-    $successMessage = $isFullSync
-        ? "✅ הסנכרון המלא הושלם! נמצאו ועובדו {$processedCount} הזמנות. ({$duration} שניות)"
-        : "✅ סנכרן בהצלחה! נמצאו ועובדו {$processedCount} הזמנות חדשות. ({$duration} שניות)";
+    if ($isFullSync) {
+        $successMessage = "✅ הסנכרון המלא הושלם! נמצאו ועובדו {$processedCount} הזמנות. ({$duration} שניות)";
+    } elseif ($sinceTimestamp !== null) {
+        $successMessage = "✅ הסנכרון מתאריך " . date('d/m/Y', $sinceTimestamp) . " הושלם! נמצאו ועובדו {$processedCount} הזמנות. ({$duration} שניות)";
+    } else {
+        $successMessage = "✅ סנכרן בהצלחה! נמצאו ועובדו {$processedCount} הזמנות חדשות. ({$duration} שניות)";
+    }
     Session::setFlash('success', $successMessage);
 
 } catch (Exception $e) {
