@@ -7,6 +7,7 @@ use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\CSRF;
 use MyOrdersVault\Models\ContactMessage;
 use MyOrdersVault\Models\Order;
+use MyOrdersVault\Models\OrderCorrection;
 use MyOrdersVault\Models\User;
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -24,6 +25,7 @@ $lastSyncedLabel = null;
 $pendingReviewCount = 0;
 $isAdmin = false;
 $newMessagesCount = 0;
+$recentCorrectionsCount = 0;
 if ($isLoggedIn) {
     $lastSyncedAt = (new User())->getLastSyncedAt($_SESSION['user_id']);
     $lastSyncedLabel = $lastSyncedAt !== null
@@ -42,6 +44,7 @@ if ($isLoggedIn) {
     $isAdmin = in_array($userEmail, $adminConfig['app']['admin_emails'] ?? [], true);
     if ($isAdmin) {
         $newMessagesCount = (new ContactMessage())->countNew();
+        $recentCorrectionsCount = (new OrderCorrection())->countRecent();
     }
 }
 ?>
@@ -131,6 +134,14 @@ if ($isLoggedIn) {
                                 <i class="fas fa-inbox"></i> פניות
                                 <?php if ($newMessagesCount > 0): ?>
                                     <span class="badge rounded-pill bg-warning text-dark"><?= (int) $newMessagesCount ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $baseUrl ?>/admin-corrections.php">
+                                <i class="fas fa-triangle-exclamation"></i> מחלוקות
+                                <?php if ($recentCorrectionsCount > 0): ?>
+                                    <span class="badge rounded-pill bg-warning text-dark"><?= (int) $recentCorrectionsCount ?></span>
                                 <?php endif; ?>
                             </a>
                         </li>

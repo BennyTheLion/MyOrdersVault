@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
+use MyOrdersVault\Core\CSRF;
 use MyOrdersVault\Core\GmailLink;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
@@ -34,8 +35,32 @@ $html = '<div class="row">
         <p><strong>📅 תאריך:</strong> ' . date('d/m/Y', strtotime($order['order_date'])) . '</p>
     </div>
     <div class="col-md-6">
-        <p><strong>💰 סכום כולל:</strong> ' . number_format($order['total_amount'], 2) . ' ' . htmlspecialchars($order['currency']) . '</p>
+        <p><strong>💰 סכום כולל:</strong> <span id="orderAmountDisplay-' . $order['id'] . '">' . number_format($order['total_amount'], 2) . ' ' . htmlspecialchars($order['currency']) . '</span></p>
         <p><strong>📊 סטטוס:</strong> <span class="badge bg-success">' . htmlspecialchars($order['order_status']) . '</span></p>
+    </div>
+</div>';
+
+$html .= '<hr>
+<div id="disputeSection-' . $order['id'] . '" data-csrf="' . htmlspecialchars(CSRF::generateToken()) . '">
+    <button type="button" class="btn btn-sm btn-outline-warning" onclick="document.getElementById(\'disputeForm-' . $order['id'] . '\').style.display = \'block\'; this.style.display = \'none\';">
+        <i class="fas fa-triangle-exclamation"></i> הסכום שגוי? דווח על מחלוקת
+    </button>
+    <div id="disputeForm-' . $order['id'] . '" style="display:none; margin-top: 12px; padding: 14px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;">
+        <p class="mb-2" style="font-size: 0.85rem; color: #92400e;">
+            תקן את הסכום לערך הנכון. ההזמנה שלך תתעדכן מיד, ונשלח דיווח לצוות כדי לבדוק את המקרה.
+        </p>
+        <div class="mb-2">
+            <label class="form-label" style="font-size: 0.85rem; font-weight: 600;">הסכום הנכון</label>
+            <input type="number" step="0.01" min="0" class="form-control form-control-sm" id="correctedAmount-' . $order['id'] . '" value="' . htmlspecialchars($order['total_amount']) . '">
+        </div>
+        <div class="mb-2">
+            <label class="form-label" style="font-size: 0.85rem; font-weight: 600;">הסבר (אופציונלי)</label>
+            <textarea class="form-control form-control-sm" id="correctionReason-' . $order['id'] . '" rows="2"></textarea>
+        </div>
+        <div id="correctionMsg-' . $order['id'] . '" class="small mb-2"></div>
+        <button type="button" class="btn btn-sm btn-warning" onclick="submitCorrection(' . $order['id'] . ')">
+            <i class="fas fa-check"></i> שמור תיקון
+        </button>
     </div>
 </div>';
 

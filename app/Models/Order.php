@@ -3,6 +3,7 @@ namespace MyOrdersVault\Models;
 
 use MyOrdersVault\Config\Database;  // 👈 זה התיקון החשוב!
 use PDO;
+use MyOrdersVault\Models\OrderCorrection;
 
 class Order {
     private $db;
@@ -53,7 +54,14 @@ class Order {
 		$totalAmount = $orderData['total_amount'] ?? 0;
 		$currency = $orderData['currency'] ?? 'USD';
 		$orderStatus = $orderData['order_status'] ?? 'confirmed';
-		
+
+		// A store whose parser keeps producing corrections doesn't get to
+		// silently auto-confirm again — route it to the review queue until
+		// corrections for it stop (see OrderCorrection::isStoreFlagged()).
+		if ($orderStatus === 'confirmed' && (new OrderCorrection())->isStoreFlagged($storeName)) {
+			$orderStatus = 'pending_review';
+		}
+
 		// שמירת ההזמנה
 		$stmt = $this->db->prepare("
 			INSERT INTO orders (user_id, email, gmail_message_id, thread_id, store_name, order_number, order_date, 
@@ -278,6 +286,22 @@ class Order {
             'order_number' => $fields['order_number'],
             'total_amount' => $fields['total_amount'],
             'currency' => $fields['currency'],
+            'id' => $orderId,
+            'user_id' => $userId,
+        ]);
+        return $stmt->rowCount() > 0;
+    }
+
+    // Used by the "wrong amount" correction flow (public/api/order-correction.php):
+    // lets a user fix their own order's amount directly, scoped to user_id like
+    // every other lookup here so one user can never touch another's order.
+    public function updateAmount($orderId, $userId, $newAmount) {
+        $stmt = $this->db->prepare("
+            UPDATE orders SET total_amount = :total_amount
+            WHERE id = :id AND user_id = :user_id
+        ");
+        $stmt->execute([
+            'total_amount' => $newAmount,
             'id' => $orderId,
             'user_id' => $userId,
         ]);

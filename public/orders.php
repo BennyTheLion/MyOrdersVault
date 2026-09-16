@@ -233,6 +233,40 @@ require_once __DIR__ . '/includes/header.php'; ?>
             `;
         }
     }
+
+    async function submitCorrection(orderId) {
+        const section = document.getElementById(`disputeSection-${orderId}`);
+        const amountInput = document.getElementById(`correctedAmount-${orderId}`);
+        const reasonInput = document.getElementById(`correctionReason-${orderId}`);
+        const msgEl = document.getElementById(`correctionMsg-${orderId}`);
+        const csrfToken = section.dataset.csrf;
+
+        msgEl.textContent = '';
+
+        const params = new URLSearchParams();
+        params.set('csrf_token', csrfToken);
+        params.set('order_id', orderId);
+        params.set('corrected_amount', amountInput.value);
+        params.set('reason', reasonInput.value);
+
+        try {
+            const response = await fetch(`<?= Url::base() ?>/api/order-correction.php`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params.toString()
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                msgEl.innerHTML = '<span class="text-success"><i class="fas fa-check-circle"></i> הסכום עודכן, תודה על הדיווח.</span>';
+                setTimeout(() => window.location.reload(), 1200);
+            } else {
+                msgEl.innerHTML = `<span class="text-danger">${data.error || 'שגיאה בשמירת התיקון'}</span>`;
+            }
+        } catch (error) {
+            msgEl.innerHTML = '<span class="text-danger">שגיאה בתקשורת עם השרת</span>';
+        }
+    }
 </script>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
 
