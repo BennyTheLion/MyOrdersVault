@@ -139,6 +139,22 @@ class Order {
         return $stmt->fetch();
     }
 
+    // Orders can be in more than one currency, so a single SUM(total_amount)
+    // (what getStats() returns) mixes them together — this groups by currency
+    // instead, letting the caller convert each group to one currency before
+    // adding them up (see dashboard.php).
+    public function getSpentByCurrency($userId) {
+        $stmt = $this->db->prepare("
+            SELECT currency, SUM(total_amount) as subtotal
+            FROM orders
+            WHERE user_id = :user_id AND total_amount IS NOT NULL AND total_amount > 0
+                AND order_status != 'pending_review'
+            GROUP BY currency
+        ");
+        $stmt->execute(['user_id' => $userId]);
+        return $stmt->fetchAll();
+    }
+
     public function getRecentOrders($userId, $limit = 10) {
         $stmt = $this->db->prepare("
             SELECT o.*,

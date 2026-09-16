@@ -26,8 +26,11 @@ $pendingReviewCount = 0;
 $isAdmin = false;
 $newMessagesCount = 0;
 $recentCorrectionsCount = 0;
+$preferredCurrency = null;
 if ($isLoggedIn) {
-    $lastSyncedAt = (new User())->getLastSyncedAt($_SESSION['user_id']);
+    $userModel = new User();
+    $lastSyncedAt = $userModel->getLastSyncedAt($_SESSION['user_id']);
+    $preferredCurrency = $userModel->getPreferredCurrency($_SESSION['user_id']);
     $lastSyncedLabel = $lastSyncedAt !== null
         ? 'סונכרן לאחרונה: ' . date('d/m/Y H:i', $lastSyncedAt)
         : 'טרם בוצע סנכרון';
@@ -157,6 +160,12 @@ if ($isLoggedIn) {
                             <i class="fas fa-user-circle fa-2x" style="color: var(--gray-400);"></i>
                         <?php endif; ?>
                         <span class="user-name"><?php echo htmlspecialchars($userName); ?></span>
+                        <select id="currencySelect" class="form-select form-select-sm" style="width: auto; display: inline-block;" title="מטבע תצוגה" onchange="setPreferredCurrency(this.value)">
+                            <option value="" <?= $preferredCurrency === null ? 'selected' : '' ?>>מטבע מקורי</option>
+                            <?php foreach (['USD' => '$ USD', 'ILS' => '₪ ILS', 'EUR' => '€ EUR', 'GBP' => '£ GBP'] as $code => $label): ?>
+                                <option value="<?= $code ?>" <?= $preferredCurrency === $code ? 'selected' : '' ?>><?= $label ?></option>
+                            <?php endforeach; ?>
+                        </select>
                         <button id="syncNavButton" onclick="startGlobalSync()" class="btn-sync-nav" title="<?php echo htmlspecialchars($lastSyncedLabel); ?>">
                             <i class="fas fa-sync-alt"></i> <span>סנכרן</span>
                         </button>
@@ -209,6 +218,32 @@ if ($isLoggedIn) {
         });
     }
     
+    function setPreferredCurrency(currency) {
+        const select = document.getElementById('currencySelect');
+        select.disabled = true;
+        fetch('<?= $baseUrl ?>/api/set-currency.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                csrf_token: '<?= htmlspecialchars($csrfToken ?? '', ENT_QUOTES) ?>',
+                currency: currency
+            }).toString()
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.reload();
+            } else {
+                select.disabled = false;
+                alert(data.error || 'שגיאה בעדכון המטבע');
+            }
+        })
+        .catch(() => {
+            select.disabled = false;
+            alert('שגיאה בתקשורת עם השרת');
+        });
+    }
+
     // הסתרת הודעות flash לאחר 5 שניות
     setTimeout(() => {
         const alerts = document.querySelectorAll('.alert-flash');

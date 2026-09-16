@@ -4,17 +4,38 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
+use MyOrdersVault\Models\User;
+use MyOrdersVault\Services\ExchangeRateService;
 
 Session::start();
-if (!Session::has('user_id')) { 
+if (!Session::has('user_id')) {
     header('Location: ' . Url::base() . '/');
-    exit; 
+    exit;
 }
 
 $userId = Session::get('user_id');
 $orderModel = new Order();
 $stats = $orderModel->getStats($userId);
 $recentOrders = $orderModel->getRecentOrders($userId, 10);
+
+// total_spent above sums every order's amount regardless of currency, which
+// is only meaningful when there's exactly one. Convert each currency's
+// subtotal into a single display currency (the user's preference, or
+// whichever currency they have the most orders in) before adding them up.
+$spentByCurrency = $orderModel->getSpentByCurrency($userId);
+$preferredCurrency = (new User())->getPreferredCurrency($userId);
+$totalSpentCurrency = $preferredCurrency ?: ($spentByCurrency[0]['currency'] ?? 'USD');
+$exchangeService = new ExchangeRateService();
+$totalSpentConverted = 0;
+$totalSpentIncomplete = false;
+foreach ($spentByCurrency as $row) {
+    $converted = $exchangeService->convert($row['subtotal'], $row['currency'], $totalSpentCurrency);
+    if ($converted === null) {
+        $totalSpentIncomplete = true;
+        continue;
+    }
+    $totalSpentConverted += $converted;
+}
 ?>
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -170,9 +191,14 @@ $recentOrders = $orderModel->getRecentOrders($userId, 10);
         <div class="col-md-3 mb-3">
             <div class="stats-card">
                 <i class="fas fa-dollar-sign"></i>
-                <h3><?php echo number_format($stats['total_spent'], 2); ?> ₪</h3>
+                <h3><?php echo number_format($totalSpentConverted, 2); ?> <?php echo htmlspecialchars($totalSpentCurrency); ?></h3>
                 <p>סה"כ הוצאות</p>
-                <p class="small-text">סך כל הקניות</p>
+                <p class="small-text">
+                    <?php echo count($spentByCurrency) > 1 ? 'מומר מכמה מטבעות' : 'סך כל הקניות'; ?>
+                    <?php if ($totalSpentIncomplete): ?>
+                        <br><span class="text-warning">לא כל הסכומים הומרו (שער חסר)</span>
+                    <?php endif; ?>
+                </p>
             </div>
         </div>
         <div class="col-md-3 mb-3">
@@ -229,7 +255,20 @@ $recentOrders = $orderModel->getRecentOrders($userId, 10);
                             </td>
                             <td><strong><?php echo htmlspecialchars($order['order_number']); ?></strong></td>
                             <td><?php echo date('d/m/Y', strtotime($order['order_date'])); ?></td>
-                            <td><?php echo number_format($order['total_amount'], 2); ?> <?php echo htmlspecialchars($order['currency']); ?></td>
+                            <td>
+                                <?php
+                                    $rowAmount = $order['total_amount'];
+                                    $rowCurrency = $order['currency'];
+                                    if ($preferredCurrency && $preferredCurrency !== $order['currency']) {
+                                        $rowConverted = $exchangeService->convert($order['total_amount'], $order['currency'], $preferredCurrency);
+                                        if ($rowConverted !== null) {
+                                            $rowAmount = $rowConverted;
+                                            $rowCurrency = $preferredCurrency;
+                                        }
+                                    }
+                                ?>
+                                <?php echo number_format($rowAmount, 2); ?> <?php echo htmlspecialchars($rowCurrency); ?>
+                            </td>
                             <td><span class="status-badge"><?php echo htmlspecialchars($order['order_status']); ?></span></td>
                         </tr>
                         <?php endforeach; ?>

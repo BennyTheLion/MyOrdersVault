@@ -15,6 +15,7 @@ CREATE TABLE `users` (
     `refresh_token` TEXT,
     `token_expires_at` DATETIME,
     `last_synced_at` INT UNSIGNED NULL,
+    `preferred_currency` VARCHAR(3) NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
@@ -101,4 +102,13 @@ CREATE TABLE `order_corrections` (
     FOREIGN KEY (`order_id`) REFERENCES `orders`(`id`) ON DELETE CASCADE,
     FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
     INDEX idx_store_created (`store_name`, `created_at`)
+) ENGINE=InnoDB;
+
+-- USD-based exchange rate cache for the currency-conversion display feature
+-- (app/Services/ExchangeRateService.php). users.preferred_currency drives
+-- which currency orders get converted to on display.
+CREATE TABLE `exchange_rates` (
+    `currency` VARCHAR(3) NOT NULL PRIMARY KEY,
+    `rate_to_usd` DECIMAL(18,8) NOT NULL,
+    `fetched_at` DATETIME NOT NULL
 ) ENGINE=InnoDB;

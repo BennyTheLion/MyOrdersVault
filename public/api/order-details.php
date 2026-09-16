@@ -4,6 +4,8 @@ use MyOrdersVault\Core\CSRF;
 use MyOrdersVault\Core\GmailLink;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
+use MyOrdersVault\Models\User;
+use MyOrdersVault\Services\ExchangeRateService;
 
 header('Content-Type: application/json');
 Session::start();
@@ -27,6 +29,19 @@ $rawData = json_decode($order['raw_data'] ?? '', true);
 $emailSubject = $rawData['original_data']['subject'] ?? null;
 $isFabricatedNumber = (bool) preg_match('/^(GEN|PP)-[a-f0-9]{10}$/i', $order['order_number']);
 
+$preferredCurrency = (new User())->getPreferredCurrency($userId);
+$displayAmount = $order['total_amount'];
+$displayCurrency = $order['currency'];
+$originalAmountNote = null;
+if ($preferredCurrency && $preferredCurrency !== $order['currency']) {
+    $converted = (new ExchangeRateService())->convert($order['total_amount'], $order['currency'], $preferredCurrency);
+    if ($converted !== null) {
+        $displayAmount = $converted;
+        $displayCurrency = $preferredCurrency;
+        $originalAmountNote = number_format($order['total_amount'], 2) . ' ' . $order['currency'];
+    }
+}
+
 $html = '<div class="row">
     <div class="col-md-6">
         <p><strong>🏪 חנות:</strong> ' . htmlspecialchars($order['store_name']) . '</p>
@@ -35,7 +50,8 @@ $html = '<div class="row">
         <p><strong>📅 תאריך:</strong> ' . date('d/m/Y', strtotime($order['order_date'])) . '</p>
     </div>
     <div class="col-md-6">
-        <p><strong>💰 סכום כולל:</strong> <span id="orderAmountDisplay-' . $order['id'] . '">' . number_format($order['total_amount'], 2) . ' ' . htmlspecialchars($order['currency']) . '</span></p>
+        <p><strong>💰 סכום כולל:</strong> <span id="orderAmountDisplay-' . $order['id'] . '">' . number_format($displayAmount, 2) . ' ' . htmlspecialchars($displayCurrency) . '</span>' .
+            ($originalAmountNote ? ' <span class="text-muted" style="font-size: 0.8rem;">(' . htmlspecialchars($originalAmountNote) . ')</span>' : '') . '</p>
         <p><strong>📊 סטטוס:</strong> <span class="badge bg-success">' . htmlspecialchars($order['order_status']) . '</span></p>
     </div>
 </div>';
@@ -50,7 +66,7 @@ $html .= '<hr>
             תקן את הסכום לערך הנכון. ההזמנה שלך תתעדכן מיד, ונשלח דיווח לצוות כדי לבדוק את המקרה.
         </p>
         <div class="mb-2">
-            <label class="form-label" style="font-size: 0.85rem; font-weight: 600;">הסכום הנכון</label>
+            <label class="form-label" style="font-size: 0.85rem; font-weight: 600;">הסכום הנכון (ב-' . htmlspecialchars($order['currency']) . ', המטבע המקורי של ההזמנה)</label>
             <input type="number" step="0.01" min="0" class="form-control form-control-sm" id="correctedAmount-' . $order['id'] . '" value="' . htmlspecialchars($order['total_amount']) . '">
         </div>
         <div class="mb-2">

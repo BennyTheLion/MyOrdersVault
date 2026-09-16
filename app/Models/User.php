@@ -97,4 +97,19 @@ class User {
             'id' => $userId
         ]);
     }
+
+    public function getPreferredCurrency($userId) {
+        $stmt = $this->db->prepare("SELECT preferred_currency FROM users WHERE id = :id");
+        $stmt->execute(['id' => $userId]);
+        $row = $stmt->fetch();
+        return $row ? $row['preferred_currency'] : null;
+    }
+
+    public function setPreferredCurrency($userId, $currency) {
+        $stmt = $this->db->prepare("UPDATE users SET preferred_currency = :currency WHERE id = :id");
+        return $stmt->execute([
+            'currency' => $currency,
+            'id' => $userId
+        ]);
+    }
 }

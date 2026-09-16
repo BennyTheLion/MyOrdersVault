@@ -5,6 +5,7 @@ use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\GmailLink;
 use MyOrdersVault\Core\Session;
 use MyOrdersVault\Models\Order;
+use MyOrdersVault\Services\ExchangeRateService;
 
 Session::start();
 if (!Session::has('user_id')) { 
@@ -40,7 +41,9 @@ $orders = $orderModel->getAllOrders($userId, $filters, $offset, $limit);
 $stores = $orderModel->getUniqueStores($userId);
 
 $orders_css = 'includes/orders.css';
-require_once __DIR__ . '/includes/header.php'; ?>
+require_once __DIR__ . '/includes/header.php';
+$exchangeService = new ExchangeRateService();
+?>
 
 <!-- Main Content -->
 <div class="container mt-4">
@@ -120,8 +123,26 @@ require_once __DIR__ . '/includes/header.php'; ?>
                             </td>
                             <td><strong style="font-weight: 600;"><?php echo htmlspecialchars($order['order_number']); ?></strong></td>
                             <td><?php echo date('d/m/Y', strtotime($order['order_date'])); ?></td>
-                            <td><?php echo number_format($order['total_amount'], 2); ?></td>
-                            <td><?php echo htmlspecialchars($order['currency']); ?></td>
+                            <?php
+                                $displayAmount = $order['total_amount'];
+                                $displayCurrency = $order['currency'];
+                                $originalNote = null;
+                                if ($preferredCurrency && $preferredCurrency !== $order['currency']) {
+                                    $converted = $exchangeService->convert($order['total_amount'], $order['currency'], $preferredCurrency);
+                                    if ($converted !== null) {
+                                        $displayAmount = $converted;
+                                        $displayCurrency = $preferredCurrency;
+                                        $originalNote = number_format($order['total_amount'], 2) . ' ' . $order['currency'];
+                                    }
+                                }
+                            ?>
+                            <td>
+                                <?php echo number_format($displayAmount, 2); ?>
+                                <?php if ($originalNote): ?>
+                                    <br><small class="text-muted"><?php echo htmlspecialchars($originalNote); ?></small>
+                                <?php endif; ?>
+                            </td>
+                            <td><?php echo htmlspecialchars($displayCurrency); ?></td>
                             <td>
                                 <span class="status-badge status-<?php echo strtolower($order['order_status']); ?>">
                                     <?php 
