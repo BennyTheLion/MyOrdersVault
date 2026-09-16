@@ -92,6 +92,20 @@ if ($gmailUrl) {
     $html .= '<a href="' . htmlspecialchars($gmailUrl) . '" target="_blank" class="btn btn-sm btn-outline-primary">
         <i class="fas fa-envelope-open-text"></i> פתח את המייל המקורי בג׳ימייל
     </a>';
+
+    if (!$isFabricatedNumber) {
+        $html .= '
+    <button type="button" class="btn btn-sm btn-outline-secondary" data-order-number="' . htmlspecialchars($order['order_number']) . '" onclick="copyOrderNumber(this)">
+        <i class="fas fa-copy"></i> העתק מספר הזמנה
+    </button>
+    <p class="text-muted mt-2" style="font-size: 0.8rem;">
+        <i class="fas fa-circle-info"></i>
+        בטלפון נייד הקישור לרוב יפתח את אפליקציית Gmail עם תוצאות חיפוש ולא את המייל הספציפי ישירות —
+        זו מגבלה של אפליקציית Gmail עצמה. אם זה קורה: העתק את מספר ההזמנה בכפתור למעלה,
+        פתח את Gmail, הדבק אותו בשורת החיפוש ולחץ חיפוש כדי למצוא את המייל.
+        במחשב הקישור אמור לפתוח את המייל הרלוונטי ישירות.
+    </p>';
+    }
 } else {
     $html .= '<span class="text-muted">אין קישור למייל המקורי</span>';
 }

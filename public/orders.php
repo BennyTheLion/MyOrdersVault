@@ -255,6 +255,28 @@ $exchangeService = new ExchangeRateService();
         }
     }
 
+    async function copyOrderNumber(buttonEl) {
+        const orderNumber = buttonEl.dataset.orderNumber;
+        const originalHtml = buttonEl.innerHTML;
+        try {
+            await navigator.clipboard.writeText(orderNumber);
+        } catch (error) {
+            // Clipboard API needs a secure context/permission; fall back to
+            // a legacy textarea+execCommand copy so it still works on older
+            // mobile browsers instead of silently doing nothing.
+            const textarea = document.createElement('textarea');
+            textarea.value = orderNumber;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try { document.execCommand('copy'); } catch (fallbackError) { /* ignore */ }
+            document.body.removeChild(textarea);
+        }
+        buttonEl.innerHTML = '<i class="fas fa-check"></i> הועתק!';
+        setTimeout(() => { buttonEl.innerHTML = originalHtml; }, 1500);
+    }
+
     async function submitCorrection(orderId) {
         const section = document.getElementById(`disputeSection-${orderId}`);
         const amountInput = document.getElementById(`correctedAmount-${orderId}`);
