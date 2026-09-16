@@ -50,4 +50,10 @@ class ContactMessage {
         $stmt = $this->db->query("SELECT COUNT(*) as total FROM contact_messages WHERE status = 'new'");
         return (int) $stmt->fetch()['total'];
     }
+
+    public function delete($id) {
+        $stmt = $this->db->prepare("DELETE FROM contact_messages WHERE id = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->rowCount() > 0;
+    }
 }

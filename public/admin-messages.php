@@ -36,10 +36,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $id = (int) ($_POST['id'] ?? 0);
-    $status = $_POST['status'] ?? '';
+    $action = $_POST['action'] ?? '';
 
-    if (in_array($status, ['new', 'read', 'resolved'], true)) {
-        $contactModel->updateStatus($id, $status);
+    if ($action === 'delete') {
+        $msg = $contactModel->find($id);
+        if ($msg && $contactModel->delete($id) && !empty($msg['attachment_path'])) {
+            $attachmentFile = __DIR__ . '/../storage/uploads/contact/' . basename($msg['attachment_path']);
+            if (is_file($attachmentFile)) {
+                unlink($attachmentFile);
+            }
+        }
+    } else {
+        $status = $_POST['status'] ?? '';
+        if (in_array($status, ['new', 'read', 'resolved'], true)) {
+            $contactModel->updateStatus($id, $status);
+        }
     }
 
     header('Location: ' . Url::base() . '/admin-messages.php');
@@ -97,6 +108,12 @@ require_once __DIR__ . '/includes/header.php'; ?>
                             </form>
                         <?php endif; ?>
                     <?php endforeach; ?>
+                    <form method="POST" action="<?= Url::base() ?>/admin-messages.php" onsubmit="return confirm('למחוק את הפנייה הזו לצמיתות?');">
+                        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(CSRF::generateToken()) ?>">
+                        <input type="hidden" name="id" value="<?= (int) $msg['id'] ?>">
+                        <input type="hidden" name="action" value="delete">
+                        <button type="submit" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> מחק</button>
+                    </form>
                 </div>
             </div>
         <?php endforeach; ?>
