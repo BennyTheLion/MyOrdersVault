@@ -31,7 +31,14 @@ if ($isLoggedIn) {
         : 'טרם בוצע סנכרון';
     $pendingReviewCount = (new Order())->countPendingReview($_SESSION['user_id']);
 
-    $adminConfig = require __DIR__ . '/../../config/config.php';
+    // Mirrors the dual-path lookup in Config\Database — on production the
+    // deployed directory sits one level deeper than on local XAMPP, so the
+    // "../../config/config.php" path that works locally 404s in production.
+    $adminConfigPath = __DIR__ . '/../../../config/config.php';
+    if (!file_exists($adminConfigPath)) {
+        $adminConfigPath = __DIR__ . '/../../config/config.php';
+    }
+    $adminConfig = require $adminConfigPath;
     $isAdmin = in_array($userEmail, $adminConfig['app']['admin_emails'] ?? [], true);
     if ($isAdmin) {
         $newMessagesCount = (new ContactMessage())->countNew();

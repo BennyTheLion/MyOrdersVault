@@ -10,7 +10,11 @@ if (!Session::has('user_id')) {
     exit;
 }
 
-$config = require __DIR__ . '/../config/config.php';
+$configPath = __DIR__ . '/../../config/config.php';
+if (!file_exists($configPath)) {
+    $configPath = __DIR__ . '/../config/config.php';
+}
+$config = require $configPath;
 $adminEmails = $config['app']['admin_emails'] ?? [];
 $userEmail = Session::get('user_email', '');
 

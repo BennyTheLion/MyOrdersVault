@@ -5,7 +5,10 @@ class Mailer {
     // Best-effort notification via PHP's mail(); failures are logged, never
     // fatal — the contact message is already saved in the DB regardless.
     public static function notifyAdmins(string $subject, string $body): void {
-        $configPath = __DIR__ . '/../../config/config.php';
+        $configPath = __DIR__ . '/../../../config/config.php';
+        if (!file_exists($configPath)) {
+            $configPath = __DIR__ . '/../../config/config.php';
+        }
         $config = file_exists($configPath) ? require $configPath : [];
         $admins = $config['app']['admin_emails'] ?? [];
 
