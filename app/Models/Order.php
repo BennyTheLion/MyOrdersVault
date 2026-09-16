@@ -295,17 +295,20 @@ class Order {
     // Used by the "wrong amount" correction flow (public/api/order-correction.php):
     // lets a user fix their own order's amount directly, scoped to user_id like
     // every other lookup here so one user can never touch another's order.
+    // Callers must verify ownership (e.g. via getById) before calling this —
+    // MySQL's rowCount() reports rows *changed*, not rows *matched*, so it
+    // reads as 0 (a false failure) whenever the "corrected" amount happens to
+    // equal the current value.
     public function updateAmount($orderId, $userId, $newAmount) {
         $stmt = $this->db->prepare("
             UPDATE orders SET total_amount = :total_amount
             WHERE id = :id AND user_id = :user_id
         ");
-        $stmt->execute([
+        return $stmt->execute([
             'total_amount' => $newAmount,
             'id' => $orderId,
             'user_id' => $userId,
         ]);
-        return $stmt->rowCount() > 0;
     }
 
     public function discardReview($orderId, $userId) {
