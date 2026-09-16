@@ -90,7 +90,7 @@ $html .= '<hr><h6>📧 פרטי המייל</h6><div class="row">
 $gmailUrl = GmailLink::build($order['order_number'], $order['thread_id'] ?? null, $order['gmail_message_id'] ?? null);
 if ($gmailUrl) {
     $html .= '<a href="' . htmlspecialchars($gmailUrl) . '" target="_blank" class="btn btn-sm btn-outline-primary">
-        <i class="fas fa-envelope-open-text"></i> פתח את המייל המקורי בג׳ימייל
+        <i class="fas fa-envelope-open-text"></i> חפש את המייל המקורי בג׳ימייל
     </a>';
 
     if (!$isFabricatedNumber) {
@@ -100,10 +100,9 @@ if ($gmailUrl) {
     </button>
     <p class="text-muted mt-2" style="font-size: 0.8rem;">
         <i class="fas fa-circle-info"></i>
-        בטלפון נייד הקישור לרוב יפתח את אפליקציית Gmail עם תוצאות חיפוש ולא את המייל הספציפי ישירות —
-        זו מגבלה של אפליקציית Gmail עצמה. אם זה קורה: העתק את מספר ההזמנה בכפתור למעלה,
-        פתח את Gmail, הדבק אותו בשורת החיפוש ולחץ חיפוש כדי למצוא את המייל.
-        במחשב הקישור אמור לפתוח את המייל הרלוונטי ישירות.
+        הקישור פותח את Gmail עם תוצאות חיפוש למספר ההזמנה — לרוב יופיע מייל אחד בלבד, ותצטרך/י ללחוץ עליו כדי לפתוח אותו.
+        זו התנהגות של Gmail עצמו ולא ניתנת לעקיפה (גם במחשב וגם בנייד). אם החיפוש לא מוצא כלום,
+        העתק/י את מספר ההזמנה בכפתור למעלה והדבק/י אותו ידנית בשורת החיפוש של Gmail.
     </p>';
     }
 } else {
