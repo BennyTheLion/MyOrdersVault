@@ -178,12 +178,12 @@ if ($isLoggedIn) {
                                     <i class="fas fa-database"></i> סנכרון מלא (בונה מחדש את כל ההזמנות)
                                 </a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li class="px-3 py-1" onclick="event.stopPropagation();">
-                                    <label for="syncSinceDate" class="form-label" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">
+                                <li class="px-3 py-1" dir="rtl" style="text-align: right;" onclick="event.stopPropagation();">
+                                    <label for="syncSinceDate" class="form-label" style="font-weight: 600; margin-bottom: 4px;">
                                         <i class="fas fa-calendar-day"></i> סנכרון מתאריך התחלה
                                     </label>
-                                    <div class="d-flex gap-1">
-                                        <input type="date" id="syncSinceDate" class="form-control form-control-sm" style="font-size: 0.82rem;" onclick="event.stopPropagation();">
+                                    <div class="d-flex gap-1" dir="rtl">
+                                        <input type="date" id="syncSinceDate" class="form-control form-control-sm" onclick="event.stopPropagation();">
                                         <button type="button" class="btn btn-sm btn-primary" onclick="startDateSync(); return false;">
                                             <i class="fas fa-play"></i>
                                         </button>
