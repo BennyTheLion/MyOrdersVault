@@ -16,7 +16,10 @@ RewriteRule ^ index.php [L]
     Header set X-XSS-Protection "1; mode=block"
 </IfModule>
 
-RedirectMatch 403 ^/config/.*$
-RedirectMatch 403 ^/app/.*$
-RedirectMatch 403 ^/storage/.*$
-RedirectMatch 403 ^/vendor/.*$
+# Anchored on "(^|/)" rather than "^/" so these still match when the app is
+# served from a subfolder (e.g. local XAMPP at /my-orders-vault/...) and not
+# only when mounted at the domain root.
+RedirectMatch 403 (^|/)config/.*$
+RedirectMatch 403 (^|/)app/.*$
+RedirectMatch 403 (^|/)storage/.*$
+RedirectMatch 403 (^|/)vendor/.*$

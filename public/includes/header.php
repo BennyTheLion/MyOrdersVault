@@ -5,6 +5,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use MyOrdersVault\Config\Url;
 use MyOrdersVault\Core\CSRF;
+use MyOrdersVault\Models\ContactMessage;
 use MyOrdersVault\Models\Order;
 use MyOrdersVault\Models\User;
 
@@ -21,12 +22,20 @@ $userPicture = $_SESSION['user_picture'] ?? '';
 
 $lastSyncedLabel = null;
 $pendingReviewCount = 0;
+$isAdmin = false;
+$newMessagesCount = 0;
 if ($isLoggedIn) {
     $lastSyncedAt = (new User())->getLastSyncedAt($_SESSION['user_id']);
     $lastSyncedLabel = $lastSyncedAt !== null
         ? 'סונכרן לאחרונה: ' . date('d/m/Y H:i', $lastSyncedAt)
         : 'טרם בוצע סנכרון';
     $pendingReviewCount = (new Order())->countPendingReview($_SESSION['user_id']);
+
+    $adminConfig = require __DIR__ . '/../../config/config.php';
+    $isAdmin = in_array($userEmail, $adminConfig['app']['admin_emails'] ?? [], true);
+    if ($isAdmin) {
+        $newMessagesCount = (new ContactMessage())->countNew();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -104,6 +113,21 @@ if ($isLoggedIn) {
                             <?php endif; ?>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $baseUrl ?>/contact.php">
+                            <i class="fas fa-envelope"></i> צור קשר
+                        </a>
+                    </li>
+                    <?php if ($isAdmin): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $baseUrl ?>/admin-messages.php">
+                                <i class="fas fa-inbox"></i> פניות
+                                <?php if ($newMessagesCount > 0): ?>
+                                    <span class="badge rounded-pill bg-warning text-dark"><?= (int) $newMessagesCount ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 <?php endif; ?>
             </ul>
             <div class="d-flex">
